@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+	<!-- Custom Colors that I use -->
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>OutlineBlack</defName>
+		<color>(0.000, 0.000, 0.000, 1)</color>
+	</ColorRegionTintColorDef>
+	
 	<!-- Basic Colors (ID 1 through 6) -->
 	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
 		<defName>Red</defName>

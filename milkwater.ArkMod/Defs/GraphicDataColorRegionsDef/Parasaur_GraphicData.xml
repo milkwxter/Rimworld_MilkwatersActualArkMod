@@ -66,6 +66,26 @@
                 <li>DinoAlbino</li>
               </allowedColors>
             </li>
+            <li>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_belly_east</maskTexPath>
+              <allowedColors>
+                <li>LightGrey</li>
+                <li>Black</li>
+                <li>DinoLightRed</li>
+                <li>DinoLightOrange</li>
+                <li>DinoLightYellow</li>
+                <li>DinoLightGreen</li>
+                <li>DinoMediumGreen</li>
+                <li>DinoLightBrown</li>
+                <li>DinoMediumBrown</li>
+              </allowedColors>
+            </li>
+            <li>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_outline_east</maskTexPath>
+              <allowedColors>
+                <li>OutlineBlack</li>
+              </allowedColors>
+            </li>
           </masks>
         </East>
 
