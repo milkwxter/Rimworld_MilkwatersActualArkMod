@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+    <defName>JungleGreen</defName>
+    <color>(0.25, 0.7, 0.3, 1)</color>
+  </ColorRegionTintColorDef>
+
+  <ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+    <defName>BloodRed</defName>
+    <color>(0.8, 0.1, 0.15, 1)</color>
+  </ColorRegionTintColorDef>
+
+  <ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+    <defName>DesertTan</defName>
+    <color>(0.8, 0.7, 0.55, 1)</color>
+  </ColorRegionTintColorDef>
+
+  <ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+    <defName>NightBlue</defName>
+    <color>(0.1, 0.2, 0.4, 1)</color>
+  </ColorRegionTintColorDef>
+
+</Defs>

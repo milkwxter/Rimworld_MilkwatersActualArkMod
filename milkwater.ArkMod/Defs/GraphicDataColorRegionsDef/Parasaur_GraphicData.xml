@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GraphicDataColorRegionsDef Class="Milkwaters_ArkMod.GraphicDataColorRegionsDef">
+    <defName>m_ParasaurGraphicTemplate</defName>
+	
+    <texPath>Things/Pawn/Dinosaur/m_Parasaurolophus/parasaurolophus</texPath>
+
+    <colorRegionTintData>
+        <North>
+          <masks>
+          </masks>
+        </North>
+
+        <East>
+          <masks>
+            <li>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_stripes_east</maskTexPath>
+              <allowedColors>
+                <li>JungleGreen</li>
+                <li>BloodRed</li>
+              </allowedColors>
+            </li>
+            <li>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_skin_east</maskTexPath>
+              <allowedColors>
+                <li>DesertTan</li>
+              </allowedColors>
+            </li>
+            <li>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_crest_east</maskTexPath>
+              <allowedColors>
+                <li>NightBlue</li>
+                <li>BloodRed</li>
+              </allowedColors>
+            </li>
+          </masks>
+        </East>
+
+        <South>
+          <masks>
+          </masks>
+        </South>
+    </colorRegionTintData>
+
+  </GraphicDataColorRegionsDef>
+
+</Defs>
