@@ -9,13 +9,31 @@
     <colorRegionTintData>
         <North>
           <masks>
-          </masks>
-        </North>
-
-        <East>
-          <masks>
             <li>
-              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_stripes_east</maskTexPath>
+			  <regionId>Skin</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_skin_north</maskTexPath>
+              <allowedColors>
+                <li>LightGrey</li>
+                <li>DarkGrey</li>
+                <li>Black</li>
+                <li>DinoLightRed</li>
+                <li>DinoDarkRed</li>
+                <li>DinoLightOrange</li>
+                <li>DinoDarkOrange</li>
+                <li>DinoLightYellow</li>
+                <li>DinoDarkYellow</li>
+                <li>DinoLightGreen</li>
+                <li>DinoMediumGreen</li>
+                <li>DinoDarkGreen</li>
+                <li>DinoLightBrown</li>
+                <li>DinoMediumBrown</li>
+                <li>DinoDarkBrown</li>
+                <li>DinoDarkerGrey</li>
+              </allowedColors>
+            </li>
+            <li>
+			  <regionId>Stripes</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_stripes_north</maskTexPath>
               <allowedColors>
                 <li>DarkGrey</li>
                 <li>Black</li>
@@ -30,6 +48,36 @@
               </allowedColors>
             </li>
             <li>
+			  <regionId>Crest</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_crest_north</maskTexPath>
+              <allowedColors>
+                <li>DarkGrey</li>
+                <li>Black</li>
+                <li>DinoDarkRed</li>
+                <li>DinoDarkOrange</li>
+                <li>DinoDarkYellow</li>
+                <li>DinoMediumGreen</li>
+                <li>DinoDarkGreen</li>
+                <li>DinoMediumBrown</li>
+                <li>DinoDarkBrown</li>
+                <li>DinoDarkerGrey</li>
+                <li>DinoAlbino</li>
+              </allowedColors>
+            </li>
+            <li>
+			  <regionId>Outline</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_outline_north</maskTexPath>
+              <allowedColors>
+                <li>OutlineBlack</li>
+              </allowedColors>
+            </li>
+          </masks>
+        </North>
+
+        <East>
+          <masks>
+            <li>
+			  <regionId>Skin</regionId>
               <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_skin_east</maskTexPath>
               <allowedColors>
                 <li>LightGrey</li>
@@ -51,6 +99,23 @@
               </allowedColors>
             </li>
             <li>
+			  <regionId>Stripes</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_stripes_east</maskTexPath>
+              <allowedColors>
+                <li>DarkGrey</li>
+                <li>Black</li>
+                <li>DinoDarkRed</li>
+                <li>DinoDarkOrange</li>
+                <li>DinoDarkYellow</li>
+                <li>DinoMediumGreen</li>
+                <li>DinoDarkGreen</li>
+                <li>DinoMediumBrown</li>
+                <li>DinoDarkBrown</li>
+                <li>DinoDarkerGrey</li>
+              </allowedColors>
+            </li>
+            <li>
+			  <regionId>Crest</regionId>
               <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_crest_east</maskTexPath>
               <allowedColors>
                 <li>DarkGrey</li>
@@ -67,6 +132,7 @@
               </allowedColors>
             </li>
             <li>
+			  <regionId>Belly</regionId>
               <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_belly_east</maskTexPath>
               <allowedColors>
                 <li>LightGrey</li>
@@ -81,6 +147,7 @@
               </allowedColors>
             </li>
             <li>
+			  <regionId>Outline</regionId>
               <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_outline_east</maskTexPath>
               <allowedColors>
                 <li>OutlineBlack</li>
@@ -91,6 +158,83 @@
 
         <South>
           <masks>
+            <li>
+			  <regionId>Skin</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_skin_south</maskTexPath>
+              <allowedColors>
+                <li>LightGrey</li>
+                <li>DarkGrey</li>
+                <li>Black</li>
+                <li>DinoLightRed</li>
+                <li>DinoDarkRed</li>
+                <li>DinoLightOrange</li>
+                <li>DinoDarkOrange</li>
+                <li>DinoLightYellow</li>
+                <li>DinoDarkYellow</li>
+                <li>DinoLightGreen</li>
+                <li>DinoMediumGreen</li>
+                <li>DinoDarkGreen</li>
+                <li>DinoLightBrown</li>
+                <li>DinoMediumBrown</li>
+                <li>DinoDarkBrown</li>
+                <li>DinoDarkerGrey</li>
+              </allowedColors>
+            </li>
+            <li>
+			  <regionId>Stripes</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_stripes_south</maskTexPath>
+              <allowedColors>
+                <li>DarkGrey</li>
+                <li>Black</li>
+                <li>DinoDarkRed</li>
+                <li>DinoDarkOrange</li>
+                <li>DinoDarkYellow</li>
+                <li>DinoMediumGreen</li>
+                <li>DinoDarkGreen</li>
+                <li>DinoMediumBrown</li>
+                <li>DinoDarkBrown</li>
+                <li>DinoDarkerGrey</li>
+              </allowedColors>
+            </li>
+            <li>
+			  <regionId>Crest</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_crest_south</maskTexPath>
+              <allowedColors>
+                <li>DarkGrey</li>
+                <li>Black</li>
+                <li>DinoDarkRed</li>
+                <li>DinoDarkOrange</li>
+                <li>DinoDarkYellow</li>
+                <li>DinoMediumGreen</li>
+                <li>DinoDarkGreen</li>
+                <li>DinoMediumBrown</li>
+                <li>DinoDarkBrown</li>
+                <li>DinoDarkerGrey</li>
+                <li>DinoAlbino</li>
+              </allowedColors>
+            </li>
+            <li>
+			  <regionId>Belly</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_belly_south</maskTexPath>
+              <allowedColors>
+                <li>LightGrey</li>
+                <li>Black</li>
+                <li>DinoLightRed</li>
+                <li>DinoLightOrange</li>
+                <li>DinoLightYellow</li>
+                <li>DinoLightGreen</li>
+                <li>DinoMediumGreen</li>
+                <li>DinoLightBrown</li>
+                <li>DinoMediumBrown</li>
+              </allowedColors>
+            </li>
+            <li>
+			  <regionId>Outline</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_outline_south</maskTexPath>
+              <allowedColors>
+                <li>OutlineBlack</li>
+              </allowedColors>
+            </li>
           </masks>
         </South>
     </colorRegionTintData>
