@@ -8,8 +8,14 @@
     <description>Testing</description>
 	
 	<comps>
-	  <li Class="Milkwaters_ArkMod.CompProperties_ColorRegions" />
+		<li Class="Milkwaters_ArkMod.CompProperties_ColorRegions" />
 	</comps>
+	<modExtensions>
+		<!--
+		<li MayRequire="Owlchemist.GiddyUp" Class="GiddyUp.Mountable" />
+		<li MayRequire="Owlchemist.GiddyUp" Class="GiddyUp.DrawInFront" />
+		-->
+	</modExtensions>
 	
     <statBases>
       <MoveSpeed>6.0</MoveSpeed>
