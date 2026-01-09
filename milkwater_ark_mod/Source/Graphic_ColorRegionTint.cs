@@ -217,7 +217,7 @@ namespace Milkwaters_ArkMod
 
             List<Texture2D> texList = maskTextures[index];
             texList.Clear();
-            maskColors[index].Clear();
+            maskColors[index].Clear(); // we won't use this for randomness anymore
 
             foreach (MaskEntry entry in facingSet.masks)
             {
@@ -295,52 +295,45 @@ namespace Milkwaters_ArkMod
             if (facingSet == null || facingSet.masks == null || facingSet.masks.Count == 0)
                 return;
 
-            // Get the pawn's color comp
-            CompColorRegions comp = thing.TryGetComp<CompColorRegions>();
-            if (comp == null)
-                return;
-
-            int colorSlot = 0;
+            // Use a deterministic seed so colors are stable per pawn
+            int seedBase = thing.thingIDNumber;
+            int regionIndex = 0;
 
             foreach (MaskEntry entry in facingSet.masks)
             {
                 if (entry == null || entry.allowedColors == null || entry.allowedColors.Count == 0)
                     continue;
 
-                if (entry.regionId.NullOrEmpty())
+                // deterministic per-pawn, per-region selection
+                Rand.PushState(seedBase ^ (regionIndex * 391));
+                string chosenName = entry.allowedColors.RandomElement();
+                Rand.PopState();
+
+                ColorRegionTintColorDef colorDef = null;
+                try
                 {
-                    Log.Warning($"[ColorRegionTint] MaskEntry missing regionId for mask '{entry.maskTexPath}'");
-                    continue;
+                    colorDef = DefDatabase<ColorRegionTintColorDef>.GetNamedSilentFail(chosenName);
+                }
+                catch
+                {
+                    colorDef = null;
                 }
 
-                // If this region already has a chosen color, reuse it
-                if (!comp.regionColors.TryGetValue(entry.regionId, out Color chosenColor))
+                Color c = Color.white;
+                if (colorDef == null)
                 {
-                    // Pick a deterministic color for this pawn + region
-                    Rand.PushState(thing.thingIDNumber ^ entry.regionId.GetHashCode());
-                    string chosenName = entry.allowedColors.RandomElement();
-                    Rand.PopState();
-
-                    ColorRegionTintColorDef colorDef = DefDatabase<ColorRegionTintColorDef>.GetNamedSilentFail(chosenName);
-                    if (colorDef == null)
-                    {
-                        Log.Warning($"[ColorRegionTint] Could not find ColorRegionTintColorDef '{chosenName}'");
-                        chosenColor = Color.white;
-                    }
-                    else
-                    {
-                        chosenColor = colorDef.color;
-                    }
-
-                    // Store it permanently
-                    comp.regionColors[entry.regionId] = chosenColor;
+                    Log.Warning($"Graphic_ColorRegionTint: Could not find ColorRegionTintColorDef '{chosenName}'");
+                }
+                else
+                {
+                    c = colorDef.color;
                 }
 
-                // Apply color to shader slot
-                mat.SetColor("_Color" + colorSlot, chosenColor);
-                colorSlot++;
+                mat.SetColor("_Color" + regionIndex, c);
+                regionIndex++;
             }
         }
+
 
         public override Graphic GetColoredVersion(Shader newShader, Color newColor, Color newColorTwo)
         {

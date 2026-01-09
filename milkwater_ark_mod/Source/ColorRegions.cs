@@ -19,7 +19,6 @@ namespace Milkwaters_ArkMod
 
     public class MaskEntry
     {
-        public string regionId;
         public string maskTexPath;
         public List<string> allowedColors;
     }
