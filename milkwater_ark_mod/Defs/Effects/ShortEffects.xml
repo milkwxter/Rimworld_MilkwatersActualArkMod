@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>m_RadarScan_Hostile_Fleck</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>1.20</solidTime>
+    <fadeOutTime>0.30</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Effects/m_radarScan_hostile</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <drawSize>2</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+</Defs>

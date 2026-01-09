@@ -33,7 +33,8 @@
       <mateMtbHours>8</mateMtbHours>
       <lifeExpectancy>25</lifeExpectancy>
       <manhunterOnTameFailChance>0.00</manhunterOnTameFailChance>
-      <manhunterOnDamageChance>0.10</manhunterOnDamageChance>
+      <manhunterOnDamageChance>0.05</manhunterOnDamageChance>
+      <packAnimal>true</packAnimal>
       <lifeStageAges>
         <li>
           <def>AnimalBaby</def>
@@ -91,6 +92,10 @@
     <race>m_Parasaurolophus</race>
     <combatPower>250</combatPower>
 	<wildGroupSize>3~5</wildGroupSize>
+	
+    <abilities>
+      <li>Parasaur_RadarScan</li>
+    </abilities>
 	
     <lifeStages>
 	  <li>

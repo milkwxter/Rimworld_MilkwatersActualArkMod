@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<AbilityDef>
+		<defName>Parasaur_RadarScan</defName>
+		<label>radar scan</label>
+		
+		<description>The parasaurolophus emits a distress call that reveals nearby threats.</description>
+		<iconPath>UI/Abilities/Ability_Parasaur_RadarScan</iconPath>
+		
+		<cooldownTicksRange>5000</cooldownTicksRange> <!-- 2 hours -->
+		
+		<aiCanUse>false</aiCanUse>
+		
+		<displayOrder>300</displayOrder>
+		
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		
+		<warmupStartSound>m_Parasaur_Call</warmupStartSound>
+		
+		<targetRequired>false</targetRequired>
+	
+		<verbProperties>
+		  <verbClass>Verb_CastAbility</verbClass>
+		  
+		  <range>23.9</range>
+		  <warmupTime>0.5</warmupTime>
+		  <requireLineOfSight>false</requireLineOfSight>
+		  
+		  <soundCast>AcidSpray_Resolve</soundCast>
+		  <targetParams>
+			<canTargetSelf>true</canTargetSelf>
+		  </targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="Milkwaters_ArkMod.CompProperties_Ability_ParasaurRadarScan"></li>
+		</comps>
+	</AbilityDef>
+
+</Defs>
