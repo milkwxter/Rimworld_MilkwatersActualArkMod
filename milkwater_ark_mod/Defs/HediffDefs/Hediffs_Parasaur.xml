@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<HediffDef>
+		<defName>Parasaur_MarkedTarget</defName>
+		<label>marked</label>
+		<labelNoun>marked target</labelNoun>
+		<description>This pawn has been highlighted by a parasaur's radar scan, making them easier to hit with attacks.</description>
+		
+		<hediffClass>HediffWithComps</hediffClass>
+		
+		<comps>
+		  <li Class="HediffCompProperties_Disappears">
+			<showRemainingTime>True</showRemainingTime>
+			<disappearsAfterTicks>600</disappearsAfterTicks>
+		  </li>
+		</comps>
+
+		<stages>
+			<li>
+				<statOffsets>
+					<m_IncomingAccuracyFactor>0.20</m_IncomingAccuracyFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

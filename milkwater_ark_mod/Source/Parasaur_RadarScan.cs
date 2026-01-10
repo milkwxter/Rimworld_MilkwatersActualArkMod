@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
+using static RimWorld.MechClusterSketch;
 
 namespace Milkwaters_ArkMod
 {
@@ -29,6 +30,8 @@ namespace Milkwaters_ArkMod
             if (map == null)
                 return;
 
+            FleckMaker.Static(caster.Position, map, FleckDefOf.PsycastAreaEffect);
+
             // collect detected hostiles
             List<Pawn> detected = new List<Pawn>();
 
@@ -46,7 +49,13 @@ namespace Milkwaters_ArkMod
                 if (pawn.HostileTo(caster) || isHostileFaction)
                 {
                     detected.Add(pawn);
-                    HighlightPawn(pawn, map);
+
+                    // apply hediff
+                    var def = DefDatabase<HediffDef>.GetNamed("Parasaur_MarkedTarget");
+                    if (!pawn.health.hediffSet.HasHediff(def))
+                    {
+                        pawn.health.AddHediff(def);
+                    }
                 }
             }
 
@@ -67,12 +76,6 @@ namespace Milkwaters_ArkMod
                     MessageTypeDefOf.NeutralEvent
                 );
             }
-        }
-
-        private void HighlightPawn(Pawn pawn, Map map)
-        {
-            // do a fleck
-            FleckMaker.AttachedOverlay(pawn, DefDatabase<FleckDef>.GetNamed("m_RadarScan_Hostile_Fleck"), new Vector3(0f, 0f, 0f));
         }
 
         public override bool Valid(LocalTargetInfo target, bool showMessages = false)

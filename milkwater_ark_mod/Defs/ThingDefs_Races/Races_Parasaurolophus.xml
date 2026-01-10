@@ -101,6 +101,7 @@
 	
     <abilities>
       <li>Parasaur_RadarScan</li>
+      <li>Parasaur_PeaceHonk</li>
     </abilities>
 	
     <lifeStages>

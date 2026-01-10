@@ -28,13 +28,51 @@
 		  <warmupTime>0.5</warmupTime>
 		  <requireLineOfSight>false</requireLineOfSight>
 		  
-		  <soundCast>AcidSpray_Resolve</soundCast>
 		  <targetParams>
 			<canTargetSelf>true</canTargetSelf>
 		  </targetParams>
 		</verbProperties>
 		<comps>
 			<li Class="Milkwaters_ArkMod.CompProperties_Ability_ParasaurRadarScan"></li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef>
+		<defName>Parasaur_PeaceHonk</defName>
+		<label>peace honk</label>
+		
+		<description>The parasaurolophus emits a honk, forcing a manhunting animal to leave the map.</description>
+		<iconPath>UI/Abilities/Ability_Parasaur_PeaceHonk</iconPath>
+		
+		<cooldownTicksRange>5000</cooldownTicksRange> <!-- 2 hours -->
+		
+		<aiCanUse>false</aiCanUse>
+		
+		<displayOrder>300</displayOrder>
+		
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		
+		<warmupStartSound>m_Parasaur_Honk</warmupStartSound>
+		
+		<targetRequired>true</targetRequired>
+	
+		<verbProperties>
+		  <verbClass>Verb_CastAbility</verbClass>
+		  
+		  <range>23.9</range>
+		  <warmupTime>0.1</warmupTime>
+		  <requireLineOfSight>true</requireLineOfSight>
+		  
+		  <targetParams>
+			<canTargetSelf>false</canTargetSelf>
+			<canTargetLocations>false</canTargetLocations>
+			<canTargetBuildings>false</canTargetBuildings>
+			<canTargetItems>false</canTargetItems>
+		  </targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="Milkwaters_ArkMod.CompProperties_Ability_ParasaurPeaceHonk"></li>
 		</comps>
 	</AbilityDef>
 
