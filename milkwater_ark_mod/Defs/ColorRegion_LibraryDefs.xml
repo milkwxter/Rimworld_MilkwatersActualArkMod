@@ -183,10 +183,328 @@
 		<color>(0.349, 0.349, 0.349, 1)</color>
 	</ColorRegionTintColorDef>
 
-	<!-- This color cannot be correctly represented in the sRGB color space. -->
+	<!-- This color cannot be correctly represented in the sRGB color space (color 36)-->
 	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
 		<defName>DinoAlbino</defName>
 		<color>(1.000, 1.000, 1.000, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<!-- Ark Ascended colors I think -->
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>BigFoot0</defName>
+		<color>(0.718, 0.588, 0.514, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>BigFoot4</defName>
+		<color>(0.918, 0.855, 0.835, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>BigFoot5</defName>
+		<color>(0.816, 0.655, 0.580, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>WolfFur</defName>
+		<color>(0.765, 0.702, 0.624, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DarkWolfFur</defName>
+		<color>(0.533, 0.463, 0.400, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DragonBase0</defName>
+		<color>(0.627, 0.400, 0.294, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DragonBase1</defName>
+		<color>(0.796, 0.475, 0.337, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DragonFire</defName>
+		<color>(0.737, 0.310, 0.000, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DragonGreen0</defName>
+		<color>(0.475, 0.518, 0.424, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DragonGreen1</defName>
+		<color>(0.565, 0.612, 0.475, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DragonGreen3</defName>
+		<color>(0.455, 0.576, 0.612, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>WyvernPurple0</defName>
+		<color>(0.471, 0.455, 0.588, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>WyvernPurple1</defName>
+		<color>(0.690, 0.635, 0.753, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>WyvernBlue0</defName>
+		<color>(0.384, 0.506, 0.655, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>WyvernBlue1</defName>
+		<color>(0.282, 0.361, 0.459, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<!-- ID 53 holy moly i hate writing these -->
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DinoMediumBlue</defName>
+		<color>(0.373, 0.643, 0.918, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DinoDeepBlue</defName>
+		<color>(0.271, 0.408, 0.831, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>NearWhite</defName>
+		<color>(0.929, 0.929, 0.929, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>NearBlack</defName>
+		<color>(0.318, 0.318, 0.318, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DarkTurquoise</defName>
+		<color>(0.094, 0.271, 0.275, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>MediumTurquoise</defName>
+		<color>(0.000, 0.439, 0.376, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>Turquoise</defName>
+		<color>(0.000, 0.773, 0.671, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>GreenSlate</defName>
+		<color>(0.251, 0.349, 0.298, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>Sage</defName>
+		<color>(0.243, 0.310, 0.251, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DarkWarmGray</defName>
+		<color>(0.231, 0.224, 0.220, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>MediumWarmGray</defName>
+		<color>(0.345, 0.333, 0.329, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>LightWarmGray</defName>
+		<color>(0.608, 0.573, 0.565, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DarkCement</defName>
+		<color>(0.322, 0.357, 0.337, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>LightCement</defName>
+		<color>(0.541, 0.631, 0.588, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>LightPink</defName>
+		<color>(0.910, 0.690, 1.000, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<!-- end of the second column... more is coming... -->
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DeepPink</defName>
+		<color>(1.000, 0.067, 0.604, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DarkViolet</defName>
+		<color>(0.451, 0.000, 0.275, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DarkMagenta</defName>
+		<color>(0.718, 0.000, 0.259, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>BurntSienna</defName>
+		<color>(0.494, 0.200, 0.118, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>MediumAutumn</defName>
+		<color>(0.663, 0.188, 0.000, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>Vermillion</defName>
+		<color>(0.937, 0.192, 0.000, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>Coral</defName>
+		<color>(1.000, 0.345, 0.204, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>Orange</defName>
+		<color>(1.000, 0.498, 0.000, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>Peach</defName>
+		<color>(1.000, 0.655, 0.227, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>LightAutumn</defName>
+		<color>(0.682, 0.439, 0.000, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>Mustard</defName>
+		<color>(0.580, 0.580, 0.153, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>ActualBlack</defName>
+		<color>(0.090, 0.090, 0.090, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>MidnightBlue</defName>
+		<color>(0.098, 0.114, 0.212, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DarkBlue</defName>
+		<color>(0.082, 0.169, 0.227, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>BlackSands</defName>
+		<color>(0.188, 0.145, 0.192, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>LemonLime</defName>
+		<color>(0.659, 1.000, 0.267, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>Mint</defName>
+		<color>(0.220, 0.914, 0.522, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>Jade</defName>
+		<color>(0.000, 0.533, 0.251, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>PineGreen</defName>
+		<color>(0.059, 0.333, 0.180, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>SpruceGreen</defName>
+		<color>(0.000, 0.357, 0.271, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>LeafGreen</defName>
+		<color>(0.357, 0.592, 0.145, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DarkLavender</defName>
+		<color>(0.369, 0.153, 0.373, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>MediumLavender</defName>
+		<color>(0.522, 0.208, 0.529, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>Lavender</defName>
+		<color>(0.741, 0.467, 0.745, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DarkTeal</defName>
+		<color>(0.055, 0.251, 0.290, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>MediumTeal</defName>
+		<color>(0.063, 0.333, 0.388, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>Teal</defName>
+		<color>(0.078, 0.518, 0.612, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>PowderBlue</defName>
+		<color>(0.510, 0.655, 1.000, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>Glacial</defName>
+		<color>(0.675, 0.918, 1.000, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>Cammo</defName>
+		<color>(0.314, 0.318, 0.094, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DryMoss</defName>
+		<color>(0.463, 0.431, 0.247, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>Custard</defName>
+		<color>(0.753, 0.741, 0.369, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>Cream</defName>
+		<color>(0.957, 1.000, 0.753, 1)</color>
 	</ColorRegionTintColorDef>
 	
 

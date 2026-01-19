@@ -295,7 +295,6 @@ namespace Milkwaters_ArkMod
             if (facingSet == null || facingSet.masks == null || facingSet.masks.Count == 0)
                 return;
 
-            // Get the pawn's color comp
             CompColorRegions comp = thing.TryGetComp<CompColorRegions>();
             if (comp == null)
                 return;
@@ -304,27 +303,37 @@ namespace Milkwaters_ArkMod
 
             foreach (MaskEntry entry in facingSet.masks)
             {
-                if (entry == null || entry.allowedColors == null || entry.allowedColors.Count == 0)
-                    continue;
-
-                if (entry.regionId.NullOrEmpty())
+                if (entry == null || entry.regionId.NullOrEmpty())
                 {
-                    Log.Warning($"[ColorRegionTint] MaskEntry missing regionId for mask '{entry.maskTexPath}'");
+                    Log.Warning($"[ColorRegionTint] MaskEntry missing regionId for mask '{entry?.maskTexPath}'");
                     continue;
                 }
 
-                // If this region already has a chosen color, reuse it
+                // Get region definition (required)
+                ColorRegionDef regionDef = DefDatabase<ColorRegionDef>.GetNamed(entry.regionId, false);
+                if (regionDef == null)
+                {
+                    Log.Error($"[ColorRegionTint] No ColorRegionDef found for regionId '{entry.regionId}'");
+                    continue;
+                }
+
+                if (regionDef.allowedColors == null || regionDef.allowedColors.Count == 0)
+                {
+                    Log.Error($"[ColorRegionTint] ColorRegionDef '{entry.regionId}' has no allowedColors");
+                    continue;
+                }
+
+                // Reuse or generate per-pawn color
                 if (!comp.regionColors.TryGetValue(entry.regionId, out Color chosenColor))
                 {
-                    // Pick a deterministic color for this pawn + region
                     Rand.PushState(thing.thingIDNumber ^ entry.regionId.GetHashCode());
-                    string chosenName = entry.allowedColors.RandomElement();
+                    string chosenName = regionDef.allowedColors.RandomElement();
                     Rand.PopState();
 
                     ColorRegionTintColorDef colorDef = DefDatabase<ColorRegionTintColorDef>.GetNamedSilentFail(chosenName);
                     if (colorDef == null)
                     {
-                        Log.Warning($"[ColorRegionTint] Could not find ColorRegionTintColorDef '{chosenName}'");
+                        Log.Error($"[ColorRegionTint] Missing ColorRegionTintColorDef '{chosenName}'");
                         chosenColor = Color.white;
                     }
                     else
@@ -332,11 +341,9 @@ namespace Milkwaters_ArkMod
                         chosenColor = colorDef.color;
                     }
 
-                    // Store it permanently
                     comp.regionColors[entry.regionId] = chosenColor;
                 }
 
-                // Apply color to shader slot
                 mat.SetColor("_Color" + colorSlot, chosenColor);
                 colorSlot++;
             }

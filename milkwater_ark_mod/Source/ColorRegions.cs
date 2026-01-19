@@ -12,6 +12,11 @@ namespace Milkwaters_ArkMod
         }
     }
 
+    public class ColorRegionDef : Def
+    {
+        public List<string> allowedColors;
+    }
+
     public class ColorRegionTintColorDef : Def
     {
         public Color color;
@@ -21,7 +26,6 @@ namespace Milkwaters_ArkMod
     {
         public string regionId;
         public string maskTexPath;
-        public List<string> allowedColors;
     }
 
     public class FacingMaskSet
