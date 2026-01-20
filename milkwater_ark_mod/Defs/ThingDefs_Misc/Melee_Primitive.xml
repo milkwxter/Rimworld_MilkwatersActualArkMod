@@ -11,6 +11,8 @@
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 		</graphicData>
+		
+		<equippedAngleOffset>-65</equippedAngleOffset>
 
 		<techLevel>Neolithic</techLevel>
 

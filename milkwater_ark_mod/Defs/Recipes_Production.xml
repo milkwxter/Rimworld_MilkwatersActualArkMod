@@ -11,7 +11,7 @@
 
   <RecipeDef ParentName="MakeStoneBlocks_Milkwater">
     <defName>Make_StoneBlocksAny_CraftingSpot</defName>
-    <label>make any stone blocks</label>
+    <label>shape any stone blocks</label>
     <description>Cut rock chunks into a few usable stone blocks.</description>
     <workerCounterClass>RecipeWorkerCounter_MakeStoneBlocks</workerCounterClass>
     <ingredients>

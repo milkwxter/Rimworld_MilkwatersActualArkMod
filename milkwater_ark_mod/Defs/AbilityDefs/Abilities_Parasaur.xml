@@ -8,7 +8,7 @@
 		<description>The parasaurolophus emits a distress call that reveals nearby threats.</description>
 		<iconPath>UI/Abilities/Ability_Parasaur_RadarScan</iconPath>
 		
-		<cooldownTicksRange>5000</cooldownTicksRange> <!-- 2 hours -->
+		<cooldownTicksRange>5000</cooldownTicksRange>
 		
 		<aiCanUse>false</aiCanUse>
 		
@@ -41,10 +41,10 @@
 		<defName>Parasaur_PeaceHonk</defName>
 		<label>peace honk</label>
 		
-		<description>The parasaurolophus emits a honk, forcing a manhunting animal to leave the map.</description>
+		<description>The parasaurolophus emits a peaceful honk, calming a manhunting animal.</description>
 		<iconPath>UI/Abilities/Ability_Parasaur_PeaceHonk</iconPath>
 		
-		<cooldownTicksRange>5000</cooldownTicksRange> <!-- 2 hours -->
+		<cooldownTicksRange>5000</cooldownTicksRange>
 		
 		<aiCanUse>false</aiCanUse>
 		
