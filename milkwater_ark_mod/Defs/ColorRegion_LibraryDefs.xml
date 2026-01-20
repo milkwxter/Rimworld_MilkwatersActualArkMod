@@ -241,6 +241,11 @@
 	</ColorRegionTintColorDef>
 	
 	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>DragonGreen2</defName>
+		<color>(0.647, 0.643, 0.545, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
 		<defName>DragonGreen3</defName>
 		<color>(0.455, 0.576, 0.612, 1)</color>
 	</ColorRegionTintColorDef>
