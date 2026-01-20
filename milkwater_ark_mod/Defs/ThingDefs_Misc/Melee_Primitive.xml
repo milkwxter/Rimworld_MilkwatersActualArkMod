@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>m_PrimitiveHatchet</defName>
+		<label>prim hatchet</label>
+		<description>A sharp stone hatchet, made to harvest wood and skin.</description>
+
+		<graphicData>
+			<texPath>Things/Equipment/WeaponMelee/m_prim_axe</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+
+		<techLevel>Neolithic</techLevel>
+
+		<costStuffCount>5</costStuffCount>
+		
+		<costList>
+			<WoodLog>20</WoodLog>
+		</costList>
+
+		<stuffCategories>
+			<li>Stony</li>
+		</stuffCategories>
+
+		<statBases>
+			<WorkToMake>500</WorkToMake>
+			<Mass>10</Mass>
+			<DeteriorationRate>0.25</DeteriorationRate>
+		</statBases>
+		
+		<recipeMaker>
+			<recipeUsers>
+				<li>CraftingSpot</li>
+			</recipeUsers>
+		</recipeMaker>
+
+
+		<tools>
+			<li>
+				<label>shaft</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>edge</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>18</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+</Defs>
