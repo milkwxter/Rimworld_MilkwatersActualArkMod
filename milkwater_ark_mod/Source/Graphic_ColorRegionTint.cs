@@ -1,41 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using Verse;
 
 namespace Milkwaters_ArkMod
 {
+    // custom graphic that hangles per-region colors and multi-direction sprites for pawns
     [StaticConstructorOnStartup]
     public class Graphic_ColorRegionTint : Graphic
     {
-        // 0 = North, 1 = East, 2 = South, 3 = West
+        // cached materials for each facing
         private readonly Material[] mats = new Material[4];
 
+        // graphic data passed from xml
         private GraphicData_ColorRegions myData;
 
+        // my shader that supports 7 masks and color slots
         private static readonly Shader ColorRegionShader = ShaderDatabase.LoadShader("ColorRegionTint");
 
-
+        // the active tint data
         private ColorRegionTintData activeTintData;
 
-        // Per-facing mask textures and colors
+        // per facing mask texture lists for that pawn
         private readonly List<Texture2D>[] maskTextures = new List<Texture2D>[4];
         private readonly List<Color>[] maskColors = new List<Color>[4];
 
+        // rotation helpers
         private bool eastFlipped;
         private bool westFlipped;
         private float drawRotatedExtraAngleOffset;
 
+        // material accessors
         public override Material MatSingle => MatSouth;
         public override Material MatNorth => mats[0];
         public override Material MatEast => mats[1];
         public override Material MatSouth => mats[2];
         public override Material MatWest => mats[3];
 
+        // rotation accessors
         public override bool EastFlipped => eastFlipped;
         public override bool WestFlipped => westFlipped;
+        public override float DrawRotatedExtraAngleOffset => drawRotatedExtraAngleOffset;
 
+        // determines if the sprite should rotate or stay static
+        // !TODO: clean this up?
         public override bool ShouldDrawRotated
         {
             get
@@ -50,17 +58,14 @@ namespace Milkwaters_ArkMod
             }
         }
 
-        public override float DrawRotatedExtraAngleOffset => drawRotatedExtraAngleOffset;
-
+        // main code, loads textures, builds materials, and loads masks
         public override void Init(GraphicRequest req)
         {
             Log.Message($"[ColorRegionTint] Init ENTER: path='{req.path ?? "null"}', gdType='{req.graphicData?.GetType().FullName ?? "null"}'");
 
             try
             {
-                // ----------------- YOUR CURRENT INIT BODY -----------------
-                // base.Init(req);
-
+                // ensure we got the correct graphicdata type
                 myData = req.graphicData as GraphicData_ColorRegions;
                 if (myData == null)
                 {
@@ -70,6 +75,7 @@ namespace Milkwaters_ArkMod
                     return;
                 }
 
+                // load template
                 GraphicDataColorRegionsDef template = myData.template;
                 if (template == null)
                 {
@@ -79,6 +85,7 @@ namespace Milkwaters_ArkMod
                     return;
                 }
 
+                // choose override tint if present, otherwise use template tint
                 activeTintData = myData.colorRegionTintOverride ?? template.colorRegionTintData;
                 if (activeTintData == null)
                 {
@@ -88,19 +95,18 @@ namespace Milkwaters_ArkMod
                     return;
                 }
 
+                // copy basic graphic settings
                 data = myData;
                 color = req.color;
                 colorTwo = req.colorTwo;
                 drawSize = req.drawSize;
 
+                // resolve texture path priority from: TEMPLATE to GRAPHICDATA to REQUEST
                 string resolvedPath = null;
-
                 if (!template.texPath.NullOrEmpty())
                     resolvedPath = template.texPath;
-
                 if (!myData.texPath.NullOrEmpty())
                     resolvedPath = myData.texPath;
-
                 if (!req.path.NullOrEmpty())
                     resolvedPath = req.path;
 
@@ -116,12 +122,14 @@ namespace Milkwaters_ArkMod
 
                 Log.Message($"[ColorRegionTint] Using path='{path}', template='{template.defName}'");
 
+                // load directional textures
                 Texture2D[] baseTex = new Texture2D[4];
                 baseTex[0] = ContentFinder<Texture2D>.Get(path + "_north", false);
                 baseTex[1] = ContentFinder<Texture2D>.Get(path + "_east", false);
                 baseTex[2] = ContentFinder<Texture2D>.Get(path + "_south", false);
                 baseTex[3] = ContentFinder<Texture2D>.Get(path + "_west", false);
 
+                // fallback logic if some facings are missing
                 if (baseTex[0] == null)
                 {
                     if (baseTex[2] != null)
@@ -153,33 +161,36 @@ namespace Milkwaters_ArkMod
                     return;
                 }
 
+                // ensure all facings have something
                 if (baseTex[2] == null) baseTex[2] = baseTex[0];
                 if (baseTex[1] == null) baseTex[1] = baseTex[3] ?? baseTex[0];
                 if (baseTex[3] == null) baseTex[3] = baseTex[1] ?? baseTex[0];
 
+                // initialize mask lists
                 for (int i = 0; i < 4; i++)
                 {
                     maskTextures[i] = new List<Texture2D>();
                     maskColors[i] = new List<Color>();
                 }
 
+                // build base materials for each facing using custom function
                 BuildFacingMaterial(0, Rot4.North, baseTex[0]);
                 BuildFacingMaterial(1, Rot4.East, baseTex[1]);
                 BuildFacingMaterial(2, Rot4.South, baseTex[2]);
                 BuildFacingMaterial(3, Rot4.West, baseTex[3]);
 
                 Log.Message("[ColorRegionTint] Init EXIT (SUCCESS).");
-                // ----------------- END BODY -----------------
             }
             catch (Exception ex)
             {
                 Log.Error($"[ColorRegionTint] Init EXCEPTION: {ex}");
                 SetAllBadMats();
                 Log.Message("[ColorRegionTint] Init EXIT (EXCEPTION).");
-                throw; // IMPORTANT: rethrow so vanilla logs point to the same call
+                throw;
             }
         }
 
+        // builds a base material for a single facing with masks
         private void BuildFacingMaterial(int index, Rot4 rot, Texture2D mainTex)
         {
             if (mainTex == null)
@@ -188,7 +199,7 @@ namespace Milkwaters_ArkMod
                 return;
             }
 
-            // Create base material like Graphic_Multi
+            // create a material request similar to Graphic_Multi
             MaterialRequest mr = default(MaterialRequest);
             mr.mainTex = mainTex;
             mr.shader = ColorRegionShader;
@@ -200,12 +211,13 @@ namespace Milkwaters_ArkMod
 
             Material mat = MaterialPool.MatFrom(mr);
 
-            // Apply our color-region masks and colors
+            // attach mask textures but not colors yet
             ApplyColorRegionDataToMaterial(index, rot, mat);
 
             mats[index] = mat;
         }
 
+        // loads mask textures for a facing and assigns them to the material
         private void ApplyColorRegionDataToMaterial(int index, Rot4 rot, Material mat)
         {
             if (activeTintData == null)
@@ -219,6 +231,7 @@ namespace Milkwaters_ArkMod
             texList.Clear();
             maskColors[index].Clear();
 
+            // load mask textures for this facing
             foreach (MaskEntry entry in facingSet.masks)
             {
                 if (entry == null)
@@ -234,14 +247,14 @@ namespace Milkwaters_ArkMod
                 texList.Add(maskTex);
             }
 
-            // Apply only mask textures here; colors will be set per-pawn later
+            // assign mask textures to shader slots
             for (int i = 0; i < texList.Count; i++)
             {
                 mat.SetTexture("_MaskTex" + i, texList[i]);
             }
         }
 
-
+        // returns the mask set for a given rotation
         private FacingMaskSet GetFacingMaskSet(Rot4 rot)
         {
             if (activeTintData == null)
@@ -254,12 +267,11 @@ namespace Milkwaters_ArkMod
             if (rot == Rot4.South)
                 return activeTintData.South;
 
-            // west fallback, use east instead
+            // west uses east masks unless explicitly defined
             return activeTintData.East;
         }
 
-
-
+        // returns a material for a specific pawn + rotation WITH colors
         public override Material MatAt(Rot4 rot, Thing thing = null)
         {
             int index = rot.AsInt;
@@ -274,18 +286,36 @@ namespace Milkwaters_ArkMod
             else
                 baseMat = mats[3];
 
-            // No pawn? Just use the shared base material.
+            // if no pawn, return shared material
             if (thing == null)
                 return baseMat;
 
-            // Clone the base material so this pawn can have its own colors.
-            Material mat = new Material(baseMat);
+            // grab the pawn's colorregion comp
+            var comp = thing.TryGetComp<CompColorRegions>();
+            if (comp == null)
+                return baseMat;
 
-            ApplyPerPawnColors(mat, rot, thing);
+            // use the facing index (0–3) as the cache key
+            int key = rot.AsInt;
 
+            // check if we've already built a material for this pawn + facing
+            if (!comp.materialCache.TryGetValue(key, out Material mat))
+            {
+                // no cached material yet means clone the shared base material once
+                mat = new Material(baseMat);
+
+                // apply this pawn's unique region colors to the cloned material
+                ApplyPerPawnColors(mat, rot, thing);
+
+                // store the finished material so we never create it again
+                comp.materialCache[key] = mat;
+            }
+
+            // return the cached per pawn material for this facing
             return mat;
         }
 
+        // applies the pawns chosen colors to the cloned material
         private void ApplyPerPawnColors(Material mat, Rot4 rot, Thing thing)
         {
             if (activeTintData == null || thing == null)
@@ -295,6 +325,7 @@ namespace Milkwaters_ArkMod
             if (facingSet == null || facingSet.masks == null || facingSet.masks.Count == 0)
                 return;
 
+            // get the pawns color storage
             CompColorRegions comp = thing.TryGetComp<CompColorRegions>();
             if (comp == null)
                 return;
@@ -309,7 +340,7 @@ namespace Milkwaters_ArkMod
                     continue;
                 }
 
-                // Get region definition (required)
+                // load region definition
                 ColorRegionDef regionDef = DefDatabase<ColorRegionDef>.GetNamed(entry.regionId, false);
                 if (regionDef == null)
                 {
@@ -323,7 +354,7 @@ namespace Milkwaters_ArkMod
                     continue;
                 }
 
-                // Reuse or generate per-pawn color
+                // reuse or generate color for this pawn + region
                 if (!comp.regionColors.TryGetValue(entry.regionId, out Color chosenColor))
                 {
                     Rand.PushState(thing.thingIDNumber ^ entry.regionId.GetHashCode());
@@ -344,6 +375,7 @@ namespace Milkwaters_ArkMod
                     comp.regionColors[entry.regionId] = chosenColor;
                 }
 
+                // assign color to shader slot
                 mat.SetColor("_Color" + colorSlot, chosenColor);
                 colorSlot++;
             }
@@ -368,6 +400,7 @@ namespace Milkwaters_ArkMod
                 colorTwo);
         }
 
+        // assigns badmat to all facings if initialization fails
         private void SetAllBadMats()
         {
             for (int i = 0; i < mats.Length; i++)
