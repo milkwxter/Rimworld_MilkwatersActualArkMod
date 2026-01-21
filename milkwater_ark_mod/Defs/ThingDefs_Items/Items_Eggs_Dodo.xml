@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="EggUnfertBase">
+		<defName>m_Egg_DodoUnfertilized</defName>
+		<label>dodo egg (unfert.)</label>
+		<description>An unfertilized dodo egg. Surprisingly nutritious for its size.</description>
+
+		<graphicData>
+			<texPath>Things/Item/Resource/Eggs/m_Egg_Dodo</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+
+		<statBases>
+			<MarketValue>8.0</MarketValue>
+			<Nutrition>0.35</Nutrition>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="EggFertBase">
+		<defName>m_Egg_DodoFertilized</defName>
+		<label>dodo egg (fert.)</label>
+		<description>A fertilized dodo egg. If kept warm, it will hatch into a baby dodo.</description>
+
+		<graphicData>
+			<texPath>Things/Item/Resource/Eggs/m_Egg_Dodo</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+
+		<statBases>
+			<MarketValue>8.0</MarketValue>
+			<Nutrition>0.35</Nutrition>
+		</statBases>
+
+		<comps>
+			<li Class="CompProperties_Hatcher">
+				<hatcherDaystoHatch>3.0</hatcherDaystoHatch>
+				<hatcherPawn>m_Dodo</hatcherPawn>
+			</li>
+		</comps>
+	</ThingDef>
+
+  
+</Defs>
