@@ -212,6 +212,10 @@
               <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_stripes_north</maskTexPath>
             </li>
             <li>
+			  <regionId>Parasaur_Belly</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_belly_north</maskTexPath>
+            </li>
+            <li>
 			  <regionId>Parasaur_Crest</regionId>
               <maskTexPath>Things/Pawn/Dinosaur/m_Parasaurolophus/Masks/parasaurolophus_crest_north</maskTexPath>
             </li>

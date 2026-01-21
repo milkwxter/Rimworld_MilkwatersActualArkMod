@@ -8,7 +8,7 @@
     <stackLimit>300</stackLimit>
     <graphicData>
       <texPath>Things/Item/Resource/m_Fiber</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
+      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
 	<thingCategories>
 		<li>ResourcesRaw</li>
@@ -18,7 +18,7 @@
       <Mass>0.014</Mass>
       <Flammability>1.5</Flammability>
     </statBases>
-    <allowedArchonexusCount>400</allowedArchonexusCount>
+    <allowedArchonexusCount>600</allowedArchonexusCount>
   </ThingDef>
   
 </Defs>
