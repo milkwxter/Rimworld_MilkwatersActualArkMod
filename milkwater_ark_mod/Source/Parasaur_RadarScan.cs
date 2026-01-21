@@ -47,13 +47,6 @@ namespace Milkwaters_ArkMod
                 if (pawn.HostileTo(caster) || isHostileFaction)
                 {
                     detected.Add(pawn);
-
-                    // apply hediff
-                    var def = DefDatabase<HediffDef>.GetNamed("Parasaur_MarkedTarget");
-                    if (!pawn.health.hediffSet.HasHediff(def))
-                    {
-                        pawn.health.AddHediff(def);
-                    }
                 }
             }
 
@@ -62,7 +55,7 @@ namespace Milkwaters_ArkMod
             {
                 Messages.Message(
                     $"Radar scan detected {detected.Count} hostile creatures.",
-                    new LookTargets(detected),
+                    caster,
                     MessageTypeDefOf.NeutralEvent
                 );
             }

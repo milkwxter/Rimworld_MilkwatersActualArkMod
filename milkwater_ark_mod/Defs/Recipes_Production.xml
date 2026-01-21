@@ -1,18 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <RecipeDef ParentName="MakeStoneBlocksBase" Name="MakeStoneBlocks_Milkwater" Abstract="True">
-    <workAmount>1000</workAmount>
-    <targetCountAdjustment>5</targetCountAdjustment>
-    <recipeUsers>
-      <li>CraftingSpot</li>
-    </recipeUsers>
-  </RecipeDef>
-
-  <RecipeDef ParentName="MakeStoneBlocks_Milkwater">
+  <RecipeDef ParentName="MakeStoneBlocksBase">
     <defName>Make_StoneBlocksAny_CraftingSpot</defName>
     <label>shape any stone blocks</label>
-    <description>Cut rock chunks into a few usable stone blocks.</description>
+    <description>Shape rock chunks into a few usable stone blocks. Slower and less effective than using a stonecutting table.</description>
     <workerCounterClass>RecipeWorkerCounter_MakeStoneBlocks</workerCounterClass>
     <ingredients>
       <li>
@@ -32,6 +24,11 @@
     <specialProducts>
       <li>Butchery</li>
     </specialProducts>
+	
+    <workAmount>1000</workAmount>
+    <recipeUsers>
+      <li>CraftingSpot</li>
+    </recipeUsers>
   </RecipeDef>
 
 </Defs>

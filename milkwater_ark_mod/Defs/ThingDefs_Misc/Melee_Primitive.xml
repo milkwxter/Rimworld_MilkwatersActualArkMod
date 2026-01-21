@@ -4,14 +4,16 @@
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
 		<defName>m_PrimitiveHatchet</defName>
 		<label>prim hatchet</label>
-		<description>A sharp stone hatchet, made to harvest wood and skin.</description>
+		<description>A sharp primitive hatchet for harvesting wood from trees.</description>
 
 		<graphicData>
 			<texPath>Things/Equipment/WeaponMelee/m_prim_axe</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
+			<drawSize>1.3</drawSize>
 		</graphicData>
 		
+		<uiIconScale>1.2</uiIconScale>
 		<equippedAngleOffset>-65</equippedAngleOffset>
 
 		<techLevel>Neolithic</techLevel>
@@ -20,6 +22,7 @@
 		
 		<costList>
 			<WoodLog>20</WoodLog>
+			<m_Fiber>10</m_Fiber>
 		</costList>
 
 		<stuffCategories>

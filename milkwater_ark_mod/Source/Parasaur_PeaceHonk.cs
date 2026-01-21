@@ -28,7 +28,7 @@ namespace Milkwaters_ArkMod
                 return;
 
             // make him flee
-            target.Pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.PanicFlee);
+            target.Pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Roaming);
 
             FleckMaker.Static(target.Pawn.Position, map, FleckDefOf.PsycastAreaEffect);
         }
