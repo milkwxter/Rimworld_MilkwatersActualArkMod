@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="EggUnfertBase">
+		<defName>m_Egg_ParasaurUnfertilized</defName>
+		<label>parasaurolophus egg (unfert.)</label>
+		<description>An unfertilized parasaurolophus egg. Surprisingly nutritious!</description>
+
+		<graphicData>
+			<texPath>Things/Item/Resource/Eggs/m_Egg_Parasaur</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+
+		<statBases>
+			<MarketValue>20.0</MarketValue>
+			<Nutrition>0.30</Nutrition>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="EggFertBase">
+		<defName>m_Egg_ParasaurFertilized</defName>
+		<label>parasaurolophus egg (fert.)</label>
+		<description>A fertilized parasaurolophus egg. If kept warm, it will hatch into a baby parasaurolophus.</description>
+
+		<graphicData>
+			<texPath>Things/Item/Resource/Eggs/m_Egg_Parasaur</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+
+		<statBases>
+			<MarketValue>20.0</MarketValue>
+			<Nutrition>0.30</Nutrition>
+		</statBases>
+
+		<comps>
+			<li Class="CompProperties_Hatcher">
+				<hatcherDaystoHatch>6.0</hatcherDaystoHatch>
+				<hatcherPawn>m_Parasaurolophus</hatcherPawn>
+			</li>
+		</comps>
+	</ThingDef>
+
+  
+</Defs>

@@ -9,6 +9,13 @@
 	
 	<comps>
 		<li Class="Milkwaters_ArkMod.CompProperties_ColorRegions" />
+		<li Class="CompProperties_EggLayer">
+			<eggUnfertilizedDef>m_Egg_ParasaurUnfertilized</eggUnfertilizedDef>
+			<eggFertilizedDef>m_Egg_ParasaurFertilized</eggFertilizedDef>
+			<eggFertilizationCountMax>1</eggFertilizationCountMax>
+			<eggLayIntervalDays>8</eggLayIntervalDays>
+			<eggCountRange>1</eggCountRange>
+		</li>
 	</comps>
 	<modExtensions>
 		<!--
@@ -18,11 +25,11 @@
 	</modExtensions>
 	
     <statBases>
-      <MoveSpeed>6.0</MoveSpeed>
+      <MoveSpeed>5.3</MoveSpeed>
       <MarketValue>500</MarketValue>
       <ComfyTemperatureMin>-10</ComfyTemperatureMin>
-      <FilthRate>8</FilthRate>
-      <Wildness>0.5</Wildness>
+      <FilthRate>6</FilthRate>
+      <Wildness>0.0</Wildness>
     </statBases>
 	
     <race>
@@ -30,16 +37,18 @@
       <predator>false</predator>
       <body>m_Theropod</body>
       <leatherDef>Leather_Lizard</leatherDef>
-      <baseHungerRate>1.0</baseHungerRate>
-      <baseBodySize>1.00</baseBodySize>
+      <baseHungerRate>0.4</baseHungerRate>
+      <baseBodySize>2.5</baseBodySize>
       <baseHealthScale>2.0</baseHealthScale>
       <foodType>VegetarianRoughAnimal</foodType>
       <trainability>Intermediate</trainability>
       <roamMtbDays>7</roamMtbDays>
       <mateMtbHours>8</mateMtbHours>
-      <lifeExpectancy>25</lifeExpectancy>
+      <lifeExpectancy>33</lifeExpectancy>
+	  
       <manhunterOnTameFailChance>0.00</manhunterOnTameFailChance>
-      <manhunterOnDamageChance>0.05</manhunterOnDamageChance>
+      <manhunterOnDamageChance>0.00</manhunterOnDamageChance>
+	  
       <packAnimal>true</packAnimal>
       <lifeStageAges>
         <li>
@@ -96,8 +105,8 @@
     <defName>m_Parasaurolophus</defName>
     <label>parasaurolophus</label>
     <race>m_Parasaurolophus</race>
-    <combatPower>250</combatPower>
-	<wildGroupSize>3~5</wildGroupSize>
+    <combatPower>180</combatPower>
+	<wildGroupSize>2~3</wildGroupSize>
 	
     <abilities>
       <li>Parasaur_RadarScan</li>
