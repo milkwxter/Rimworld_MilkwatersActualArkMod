@@ -1,9 +1,10 @@
-continue testing parasaur abilities
 finish Dodo bird
 make more dodo textures
 make dodo egg smaller in xml
 make dodo colors
 compress dodo textures when done
+keep working on torpor formula
+change colors on wooden club
 
 
 

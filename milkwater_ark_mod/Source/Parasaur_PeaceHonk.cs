@@ -27,10 +27,20 @@ namespace Milkwaters_ArkMod
             if (map == null)
                 return;
 
-            // make him flee
-            target.Pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Roaming);
+            // make him stop hunting for men
+            var ms = target.Pawn.mindState;
+            ms.mentalStateHandler.Reset();
+            target.Pawn.jobs.StopAll();
 
+            // special effects
             FleckMaker.Static(target.Pawn.Position, map, FleckDefOf.PsycastAreaEffect);
+            LifeStageUtility.PlayNearestLifestageSound(
+                target.Pawn,
+                ls => ls.soundCall,
+                gene => gene.soundCall,
+                mutant => mutant.soundCall,
+                1f
+            );
         }
 
         public override bool Valid(LocalTargetInfo target, bool showMessages = false)
