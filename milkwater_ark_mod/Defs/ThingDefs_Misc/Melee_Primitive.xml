@@ -17,6 +17,10 @@
 		<equippedAngleOffset>-65</equippedAngleOffset>
 
 		<techLevel>Neolithic</techLevel>
+		
+		<equippedStatOffsets>
+			<PlantWorkSpeed>0.20</PlantWorkSpeed>
+		</equippedStatOffsets>
 
 		<costStuffCount>5</costStuffCount>
 		
@@ -41,10 +45,9 @@
 			</recipeUsers>
 		</recipeMaker>
 
-
 		<tools>
 			<li>
-				<label>shaft</label>
+				<label>handle</label>
 				<capacities>
 					<li>Blunt</li>
 					<li>Poke</li>
@@ -53,9 +56,74 @@
 				<cooldownTime>2</cooldownTime>
 			</li>
 			<li>
-				<label>edge</label>
+				<label>blade</label>
 				<capacities>
-					<li>Stab</li>
+					<li>Cut</li>
+				</capacities>
+				<power>18</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>m_PrimitivePickaxe</defName>
+		<label>prim pickaxe</label>
+		<description>A sharp primitive pickaxe for mining all sorts of minerals.</description>
+
+		<graphicData>
+			<texPath>Things/Equipment/WeaponMelee/m_prim_pick</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>1.3</drawSize>
+		</graphicData>
+		
+		<uiIconScale>1.2</uiIconScale>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+
+		<techLevel>Neolithic</techLevel>
+		
+		<equippedStatOffsets>
+			<MiningSpeed>0.20</MiningSpeed>
+		</equippedStatOffsets>
+
+		<costStuffCount>5</costStuffCount>
+		
+		<costList>
+			<WoodLog>20</WoodLog>
+			<m_Fiber>10</m_Fiber>
+		</costList>
+
+		<stuffCategories>
+			<li>Stony</li>
+		</stuffCategories>
+
+		<statBases>
+			<WorkToMake>500</WorkToMake>
+			<Mass>10</Mass>
+			<DeteriorationRate>0.25</DeteriorationRate>
+		</statBases>
+		
+		<recipeMaker>
+			<recipeUsers>
+				<li>CraftingSpot</li>
+			</recipeUsers>
+		</recipeMaker>
+
+		<tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>point</label>
+				<capacities>
+					<li>Cut</li>
 				</capacities>
 				<power>18</power>
 				<cooldownTime>2</cooldownTime>

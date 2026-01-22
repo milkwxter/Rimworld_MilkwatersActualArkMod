@@ -1,7 +1,5 @@
 continue testing parasaur abilities
-add prim pickaxe, it modifies mining speed
 add Dodo bird yay
-add parasaur egg laying
 
 
 
