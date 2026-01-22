@@ -1,6 +1,9 @@
 continue testing parasaur abilities
-add Dodo bird yay
-
+finish Dodo bird
+make more dodo textures
+make dodo egg smaller in xml
+make dodo colors
+compress dodo textures when done
 
 
 
