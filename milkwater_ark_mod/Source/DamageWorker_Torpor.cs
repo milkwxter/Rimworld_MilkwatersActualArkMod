@@ -26,12 +26,7 @@ namespace Milkwaters_ArkMod
 
                 // special effects
                 float percent = scaled * 100f;
-                MoteText mote = (MoteText)ThingMaker.MakeThing(ThingDefOf.Mote_Text);
-                mote.text = $"+{percent:0.#}% torpor";
-                mote.textColor = new Color(0.45f, 0.85f, 0.35f);
-                mote.exactPosition = pawn.DrawPos;
-                GenSpawn.Spawn(mote, pawn.Position, pawn.Map);
-
+                MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, $"+{percent:0.#}% torpor", new Color(0.45f, 0.85f, 0.35f));
             }
 
             return result;

@@ -9,10 +9,17 @@
 		<description>This pawn is under the effects of torpor. It will eventually fall asleep if the severity continues to rise.</description>
 
 		<comps>
-			<li Class="Milkwaters_ArkMod.HediffCompProperties_TorporWatcher" />
+		
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-0.2</severityPerDay>
 			</li>
+			<li Class="HediffCompProperties_GiveHediff">
+				<hediffDef>m_TorporSleep</hediffDef>
+				<skipIfAlreadyExists>true</skipIfAlreadyExists>
+				<atSeverity>1.0</atSeverity>
+				<disappearsAfterGiving>true</disappearsAfterGiving>
+			</li>
+
 		</comps>
 		
 		<initialSeverity>0.001</initialSeverity>
