@@ -6,14 +6,6 @@
 		<allowedColors>
 			<li>LightGrey</li>
 			<li>DinoLightOrange</li>
-			<li>DinoDarkOrange</li>
-			<li>DinoLightYellow</li>
-			<li>DinoDarkYellow</li>
-			<li>DinoLightGreen</li>
-			<li>DinoMediumGreen</li>
-			<li>DinoLightBlue</li>
-			<li>DinoDarkBlue</li>
-			<li>DinoLightPurple</li>
 			<li>DinoLightBrown</li>
 			<li>DinoMediumBrown</li>
 			<li>DinoDarkBrown</li>
@@ -24,69 +16,31 @@
 			<li>BigFoot5</li>
 			<li>WolfFur</li>
 			<li>DarkWolfFur</li>
-			<li>DragonBase0</li>
-			<li>DragonBase1</li>
-			<li>DragonGreen0</li>
-			<li>DragonGreen1</li>
-			<li>DragonGreen2</li>
-			<li>DragonGreen3</li>
-			<li>WyvernPurple0</li>
-			<li>WyvernPurple1</li>
-			<li>WyvernBlue0</li>
-			<li>WyvernBlue1</li>
 			<li>NearBlack</li>
-			<li>GreenSlate</li>
-			<li>Sage</li>
 			<li>DarkWarmGray</li>
 			<li>MediumWarmGray</li>
 			<li>LightWarmGray</li>
-			<li>DarkCement</li>
-			<li>LightCement</li>
 			<li>LightAutumn</li>
-			<li>Mustard</li>
-			<li>MidnightBlue</li>
-			<li>DarkBlue</li>
-			<li>BlackSands</li>
-			<li>Glacial</li>
-			<li>Cammo</li>
-			<li>Custard</li>
+			<li>Cream</li>
 		</allowedColors>
 	</ColorRegionDef>
 	
 	<ColorRegionDef Class="Milkwaters_ArkMod.ColorRegionDef">
 		<defName>Dodo_Beak</defName>
 		<allowedColors>
-			<li>DinoDarkOrange</li>
-			<li>DinoDarkGreen</li>
-			<li>DinoDarkBlue</li>
+			<li>DinoLightBrown</li>
 			<li>DinoMediumBrown</li>
 			<li>DinoDarkBrown</li>
 			<li>DinoDarkerGrey</li>
+			<li>BigFoot0</li>
+			<li>BigFoot4</li>
+			<li>BigFoot5</li>
 			<li>DarkWolfFur</li>
-			<li>DragonBase0</li>
-			<li>DragonFire</li>
-			<li>DragonGreen0</li>
-			<li>DragonGreen3</li>
-			<li>WyvernPurple0</li>
-			<li>WyvernBlue0</li>
-			<li>WyvernBlue1</li>
 			<li>NearBlack</li>
-			<li>DarkTurquoise</li>
-			<li>MediumTurquoise</li>
-			<li>GreenSlate</li>
-			<li>Sage</li>
 			<li>DarkWarmGray</li>
 			<li>MediumWarmGray</li>
-			<li>DarkCement</li>
-			<li>BurntSienna</li>
-			<li>MediumAutumn</li>
-			<li>MidnightBlue</li>
-			<li>BlackSands</li>
-			<li>PineGreen</li>
-			<li>SpruceGreen</li>
-			<li>DarkTeal</li>
-			<li>Cammo</li>
-			<li>DryMoss</li>
+			<li>LightWarmGray</li>
+			<li>Cream</li>
 		</allowedColors>
 	</ColorRegionDef>
 	
@@ -95,41 +49,22 @@
 		<allowedColors>
 			<li>LightGrey</li>
 			<li>DinoLightOrange</li>
-			<li>DinoLightYellow</li>
-			<li>DinoDarkYellow</li>
-			<li>DinoLightGreen</li>
-			<li>DinoMediumGreen</li>
-			<li>DinoLightBlue</li>
-			<li>DinoLightPurple</li>
 			<li>DinoLightBrown</li>
 			<li>DinoMediumBrown</li>
+			<li>DinoDarkBrown</li>
+			<li>DinoDarkerGrey</li>
 			<li>DinoAlbino</li>
 			<li>BigFoot0</li>
 			<li>BigFoot4</li>
 			<li>BigFoot5</li>
 			<li>WolfFur</li>
 			<li>DarkWolfFur</li>
-			<li>DragonBase0</li>
-			<li>DragonBase1</li>
-			<li>DragonGreen0</li>
-			<li>DragonGreen1</li>
-			<li>DragonGreen2</li>
-			<li>DragonGreen3</li>
-			<li>WyvernPurple0</li>
-			<li>WyvernPurple1</li>
-			<li>WyvernBlue0</li>
-			<li>DinoMediumBlue</li>
+			<li>NearBlack</li>
+			<li>DarkWarmGray</li>
+			<li>MediumWarmGray</li>
 			<li>LightWarmGray</li>
-			<li>LightCement</li>
-			<li>Coral</li>
-			<li>Orange</li>
-			<li>Peach</li>
+			<li>BurntSienna</li>
 			<li>LightAutumn</li>
-			<li>Mustard</li>
-			<li>PowderBlue</li>
-			<li>Glacial</li>
-			<li>DryMoss</li>
-			<li>Custard</li>
 			<li>Cream</li>
 		</allowedColors>
 	</ColorRegionDef>
@@ -139,13 +74,6 @@
 		<allowedColors>
 			<li>LightGrey</li>
 			<li>DinoLightOrange</li>
-			<li>DinoDarkOrange</li>
-			<li>DinoLightYellow</li>
-			<li>DinoDarkYellow</li>
-			<li>DinoLightGreen</li>
-			<li>DinoMediumGreen</li>
-			<li>DinoLightBlue</li>
-			<li>DinoDarkBlue</li>
 			<li>DinoLightPurple</li>
 			<li>DinoLightBrown</li>
 			<li>DinoMediumBrown</li>
@@ -158,32 +86,15 @@
 			<li>WolfFur</li>
 			<li>DarkWolfFur</li>
 			<li>DragonBase0</li>
-			<li>DragonBase1</li>
-			<li>DragonGreen0</li>
-			<li>DragonGreen1</li>
-			<li>DragonGreen2</li>
-			<li>DragonGreen3</li>
 			<li>WyvernPurple0</li>
-			<li>WyvernPurple1</li>
-			<li>WyvernBlue0</li>
-			<li>WyvernBlue1</li>
 			<li>NearBlack</li>
-			<li>DarkTurquoise</li>
-			<li>GreenSlate</li>
-			<li>Sage</li>
 			<li>DarkWarmGray</li>
 			<li>MediumWarmGray</li>
 			<li>LightWarmGray</li>
-			<li>DarkCement</li>
-			<li>LightCement</li>
+			<li>BurntSienna</li>
+			<li>Peach</li>
 			<li>LightAutumn</li>
-			<li>Mustard</li>
-			<li>MidnightBlue</li>
-			<li>DarkBlue</li>
-			<li>BlackSands</li>
-			<li>Glacial</li>
-			<li>Cammo</li>
-			<li>Custard</li>
+			<li>Cream</li>
 		</allowedColors>
 	</ColorRegionDef>
 	
@@ -192,13 +103,6 @@
 		<allowedColors>
 			<li>LightGrey</li>
 			<li>DinoLightOrange</li>
-			<li>DinoDarkOrange</li>
-			<li>DinoLightYellow</li>
-			<li>DinoDarkYellow</li>
-			<li>DinoLightGreen</li>
-			<li>DinoMediumGreen</li>
-			<li>DinoLightBlue</li>
-			<li>DinoDarkBlue</li>
 			<li>DinoLightPurple</li>
 			<li>DinoLightBrown</li>
 			<li>DinoMediumBrown</li>
@@ -211,32 +115,15 @@
 			<li>WolfFur</li>
 			<li>DarkWolfFur</li>
 			<li>DragonBase0</li>
-			<li>DragonBase1</li>
-			<li>DragonGreen0</li>
-			<li>DragonGreen1</li>
-			<li>DragonGreen2</li>
-			<li>DragonGreen3</li>
 			<li>WyvernPurple0</li>
-			<li>WyvernPurple1</li>
-			<li>WyvernBlue0</li>
-			<li>WyvernBlue1</li>
 			<li>NearBlack</li>
-			<li>DarkTurquoise</li>
-			<li>GreenSlate</li>
-			<li>Sage</li>
 			<li>DarkWarmGray</li>
 			<li>MediumWarmGray</li>
 			<li>LightWarmGray</li>
-			<li>DarkCement</li>
-			<li>LightCement</li>
+			<li>BurntSienna</li>
+			<li>Peach</li>
 			<li>LightAutumn</li>
-			<li>Mustard</li>
-			<li>MidnightBlue</li>
-			<li>DarkBlue</li>
-			<li>BlackSands</li>
-			<li>Glacial</li>
-			<li>Cammo</li>
-			<li>Custard</li>
+			<li>Cream</li>
 		</allowedColors>
 	</ColorRegionDef>
 
@@ -282,6 +169,26 @@
 
         <South>
           <masks>
+            <li>
+			  <regionId>Dodo_Body</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Dodo/Masks/dodo_body_south</maskTexPath>
+            </li>
+            <li>
+			  <regionId>Dodo_Head</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Dodo/Masks/dodo_head_south</maskTexPath>
+            </li>
+            <li>
+			  <regionId>Dodo_Face</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Dodo/Masks/dodo_face_south</maskTexPath>
+            </li>
+            <li>
+			  <regionId>Dodo_Beak</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Dodo/Masks/dodo_beak_south</maskTexPath>
+            </li>
+            <li>
+			  <regionId>Default_Outline</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Dodo/Masks/dodo_outline_south</maskTexPath>
+            </li>
           </masks>
         </South>
     </colorRegionTintData>
