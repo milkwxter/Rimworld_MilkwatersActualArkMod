@@ -186,6 +186,10 @@
               <maskTexPath>Things/Pawn/Dinosaur/m_Dodo/Masks/dodo_beak_south</maskTexPath>
             </li>
             <li>
+			  <regionId>Dodo_Wings</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Dodo/Masks/dodo_wings_south</maskTexPath>
+            </li>
+            <li>
 			  <regionId>Default_Outline</regionId>
               <maskTexPath>Things/Pawn/Dinosaur/m_Dodo/Masks/dodo_outline_south</maskTexPath>
             </li>
