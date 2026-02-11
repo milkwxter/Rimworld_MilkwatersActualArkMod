@@ -135,6 +135,22 @@
     <colorRegionTintData>
         <North>
           <masks>
+            <li>
+			  <regionId>Dodo_Body</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Dodo/Masks/dodo_body_north</maskTexPath>
+            </li>
+            <li>
+			  <regionId>Dodo_Head</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Dodo/Masks/dodo_head_north</maskTexPath>
+            </li>
+            <li>
+			  <regionId>Dodo_Wings</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Dodo/Masks/dodo_wings_north</maskTexPath>
+            </li>
+            <li>
+			  <regionId>Default_Outline</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Dodo/Masks/dodo_outline_north</maskTexPath>
+            </li>
           </masks>
         </North>
 
