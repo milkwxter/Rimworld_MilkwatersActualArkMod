@@ -5,7 +5,7 @@
     <defName>m_Dodo</defName>
     <label>dodo</label>
     <devNote>dodo</devNote>
-    <description>Testing</description>
+    <description>The dodo is a small, herbivorous flightless bird. It is quite docile to humans, and their eggs are delicious.</description>
 	
 	<comps>
 		<li Class="Milkwaters_ArkMod.CompProperties_ColorRegions" />

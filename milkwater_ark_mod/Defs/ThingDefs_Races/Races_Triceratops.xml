@@ -5,13 +5,13 @@
     <defName>m_Triceratops</defName>
     <label>triceratops</label>
     <devNote>triceratops</devNote>
-    <description>Testing</description>
+    <description>The triceratops, or simply trike, is a medium sized, herbivorous dinosaur known for its deadly horned face. This breed has also evolved a prominent horned-ridge seen in other similar species.</description>
 	
 	<comps>
 		<li Class="Milkwaters_ArkMod.CompProperties_ColorRegions" />
 		<li Class="CompProperties_EggLayer">
-			<eggUnfertilizedDef>m_Egg_ParasaurUnfertilized</eggUnfertilizedDef>
-			<eggFertilizedDef>m_Egg_ParasaurFertilized</eggFertilizedDef>
+			<eggUnfertilizedDef>m_Egg_TrikeUnfertilized</eggUnfertilizedDef>
+			<eggFertilizedDef>m_Egg_TrikeFertilized</eggFertilizedDef>
 			<eggFertilizationCountMax>1</eggFertilizationCountMax>
 			<eggLayIntervalDays>8</eggLayIntervalDays>
 			<eggCountRange>1</eggCountRange>
@@ -26,7 +26,7 @@
 	
     <statBases>
       <MoveSpeed>5.3</MoveSpeed>
-      <MarketValue>500</MarketValue>
+      <MarketValue>750</MarketValue>
       <ComfyTemperatureMin>-10</ComfyTemperatureMin>
       <FilthRate>6</FilthRate>
       <Wildness>0.0</Wildness>

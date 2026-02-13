@@ -5,7 +5,7 @@
     <defName>m_Parasaurolophus</defName>
     <label>parasaurolophus</label>
     <devNote>parasaurolophus</devNote>
-    <description>Testing</description>
+    <description>The parasaurolophus, or parasaur, is a medium sized, herbivorous dinosaur known for its ability to honk and scare away predators. It can also eminate a wave from its crest to detect nearby the prescence of nearby hostiles.</description>
 	
 	<comps>
 		<li Class="Milkwaters_ArkMod.CompProperties_ColorRegions" />

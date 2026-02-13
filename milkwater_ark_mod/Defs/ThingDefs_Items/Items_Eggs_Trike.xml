@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="EggUnfertBase">
+		<defName>m_Egg_TrikeUnfertilized</defName>
+		<label>triceratops egg (unfert.)</label>
+		<description>An unfertilized triceratops egg. Surprisingly nutritious!</description>
+
+		<graphicData>
+			<texPath>Things/Item/Resource/Eggs/m_egg_trike</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+
+		<statBases>
+			<MarketValue>30.0</MarketValue>
+			<Nutrition>0.30</Nutrition>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="EggFertBase">
+		<defName>m_Egg_TrikeFertilized</defName>
+		<label>triceratops egg (fert.)</label>
+		<description>A fertilized triceratops egg. If kept warm, it will hatch into a baby triceratops.</description>
+
+		<graphicData>
+			<texPath>Things/Item/Resource/Eggs/m_egg_trike</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+
+		<statBases>
+			<MarketValue>30.0</MarketValue>
+			<Nutrition>0.30</Nutrition>
+		</statBases>
+
+		<comps>
+			<li Class="CompProperties_Hatcher">
+				<hatcherDaystoHatch>6.0</hatcherDaystoHatch>
+				<hatcherPawn>m_Triceratops</hatcherPawn>
+			</li>
+		</comps>
+	</ThingDef>
+
+  
+</Defs>

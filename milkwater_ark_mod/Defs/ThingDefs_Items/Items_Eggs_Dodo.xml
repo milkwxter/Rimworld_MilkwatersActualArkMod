@@ -7,7 +7,7 @@
 		<description>An unfertilized dodo egg. Surprisingly nutritious for its size.</description>
 
 		<graphicData>
-			<texPath>Things/Item/Resource/Eggs/m_Egg_Dodo</texPath>
+			<texPath>Things/Item/Resource/Eggs/m_egg_dodo</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 
@@ -23,7 +23,7 @@
 		<description>A fertilized dodo egg. If kept warm, it will hatch into a baby dodo.</description>
 
 		<graphicData>
-			<texPath>Things/Item/Resource/Eggs/m_Egg_Dodo</texPath>
+			<texPath>Things/Item/Resource/Eggs/m_egg_dodo</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 

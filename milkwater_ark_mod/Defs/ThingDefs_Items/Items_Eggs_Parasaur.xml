@@ -7,7 +7,7 @@
 		<description>An unfertilized parasaurolophus egg. Surprisingly nutritious!</description>
 
 		<graphicData>
-			<texPath>Things/Item/Resource/Eggs/m_Egg_Parasaur</texPath>
+			<texPath>Things/Item/Resource/Eggs/m_egg_parasaur</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 
@@ -23,7 +23,7 @@
 		<description>A fertilized parasaurolophus egg. If kept warm, it will hatch into a baby parasaurolophus.</description>
 
 		<graphicData>
-			<texPath>Things/Item/Resource/Eggs/m_Egg_Parasaur</texPath>
+			<texPath>Things/Item/Resource/Eggs/m_egg_parasaur</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 
