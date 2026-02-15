@@ -47,7 +47,7 @@
       <lifeExpectancy>33</lifeExpectancy>
 	  
       <manhunterOnTameFailChance>0.00</manhunterOnTameFailChance>
-      <manhunterOnDamageChance>0.00</manhunterOnDamageChance>
+      <manhunterOnDamageChance>0.50</manhunterOnDamageChance>
 	  
       <packAnimal>true</packAnimal>
       <lifeStageAges>
@@ -62,10 +62,10 @@
         <li>
           <def>AnimalAdult</def>
           <minAge>0.33</minAge>
-          <soundWounded>m_Parasaur_Wounded</soundWounded>
-          <soundDeath>m_Parasaur_Death</soundDeath>
-          <soundCall>m_Parasaur_Call</soundCall>
-          <soundAngry>m_Parasaur_Angry</soundAngry>
+          <soundWounded>m_Trike_Wounded</soundWounded>
+          <soundDeath>m_Trike_Death</soundDeath>
+          <soundCall>m_Trike_Call</soundCall>
+          <soundAngry>m_Trike_Angry</soundAngry>
         </li>
       </lifeStageAges>
       <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
@@ -79,11 +79,11 @@
 	
     <tools>
       <li>
-        <label>teeth</label>
+        <label>horns</label>
         <capacities>
-          <li>Bite</li>
+          <li>Stab</li>
         </capacities>
-        <power>11</power>
+        <power>20</power>
         <cooldownTime>2</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
       </li>
@@ -92,7 +92,7 @@
         <capacities>
           <li>Blunt</li>
         </capacities>
-        <power>9</power>
+        <power>14</power>
         <cooldownTime>1.2</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
         <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
@@ -115,6 +115,10 @@
 			<texPath>Things/Pawn/Dinosaur/m_Triceratops/trike</texPath>
 			<drawSize>3.0</drawSize>
 			<template>m_TrikeGraphicTemplate</template>
+			<shadowData>
+				<volume>(0.4, 0.3, 0.3)</volume>
+				<offset>(0,0,-0.2)</offset>
+			</shadowData>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>Things/Pawn/Dinosaur/m_Triceratops/trike_dessicated</texPath>
@@ -128,6 +132,10 @@
 			<texPath>Things/Pawn/Dinosaur/m_Triceratops/trike</texPath>
 			<drawSize>4.0</drawSize>
 			<template>m_TrikeGraphicTemplate</template>
+			<shadowData>
+				<volume>(0.6, 0.45, 0.45)</volume>
+				<offset>(0,0,-0.2)</offset>
+			</shadowData>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>Things/Pawn/Dinosaur/m_Triceratops/trike_dessicated</texPath>
@@ -141,6 +149,10 @@
 			<texPath>Things/Pawn/Dinosaur/m_Triceratops/trike</texPath>
 			<drawSize>4.5</drawSize>
 			<template>m_TrikeGraphicTemplate</template>
+			<shadowData>
+				<volume>(0.8, 0.6, 0.6)</volume>
+				<offset>(0,0,-0.2)</offset>
+			</shadowData>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>Things/Pawn/Dinosaur/m_Triceratops/trike_dessicated</texPath>

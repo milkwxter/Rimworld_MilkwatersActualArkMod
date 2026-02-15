@@ -33,14 +33,14 @@
       <baseHungerRate>0.4</baseHungerRate>
       <baseBodySize>2.5</baseBodySize>
       <baseHealthScale>2.2</baseHealthScale>
-      <foodType>VegetarianRoughAnimal</foodType>
+      <foodType>CarnivoreAnimal</foodType>
       <trainability>Intermediate</trainability>
       <roamMtbDays>7</roamMtbDays>
       <mateMtbHours>8</mateMtbHours>
       <lifeExpectancy>33</lifeExpectancy>
 	  
-      <manhunterOnTameFailChance>0.00</manhunterOnTameFailChance>
-      <manhunterOnDamageChance>0.00</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>0.20</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>1.00</manhunterOnDamageChance>
 	  
       <packAnimal>true</packAnimal>
       <lifeStageAges>
