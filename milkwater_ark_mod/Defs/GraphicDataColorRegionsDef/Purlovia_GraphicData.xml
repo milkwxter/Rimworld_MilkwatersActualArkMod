@@ -65,6 +65,20 @@
 
     <colorRegionTintData>
         <North>
+          <masks>
+            <li>
+			  <regionId>Purlovia_Body</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Purlovia/Masks/purlovia_body_north</maskTexPath>
+            </li>
+            <li>
+			  <regionId>Purlovia_Stripes</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Purlovia/Masks/purlovia_stripes_north</maskTexPath>
+            </li>
+            <li>
+			  <regionId>Default_Outline</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Purlovia/Masks/purlovia_outline_north</maskTexPath>
+            </li>
+          </masks>
         </North>
 
         <East>
