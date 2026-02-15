@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- Purlovia -->
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>PurloviaFangs</defName>
+		<color>(0.678, 0.615, 0.533, 1)</color>
+	</ColorRegionTintColorDef>
+	
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>PurloviaLips</defName>
+		<color>(0.392, 0.345, 0.372, 1)</color>
+	</ColorRegionTintColorDef>
+
+</Defs>
