@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ColorRegionDef Class="Milkwaters_ArkMod.ColorRegionDef">
+		<defName>Carchar_Body</defName>
+		<allowedColors>
+			<li>DarkGrey</li>
+			<li>Black</li>
+			<li>DinoDarkRed</li>
+			<li>DinoDarkOrange</li>
+			<li>DinoMediumBrown</li>
+			<li>DinoDarkBrown</li>
+			<li>DinoDarkerGrey</li>
+			<li>BigFoot0</li>
+			<li>BigFoot5</li>
+			<li>DarkWolfFur</li>
+			<li>White</li>
+		</allowedColors>
+	</ColorRegionDef>
+	
+	<ColorRegionDef Class="Milkwaters_ArkMod.ColorRegionDef">
+		<defName>Carchar_Spots</defName>
+		<allowedColors>
+			<li>LightGrey</li>
+			<li>Black</li>
+			<li>DinoLightOrange</li>
+			<li>DinoLightBrown</li>
+			<li>DinoMediumBrown</li>
+			<li>BigFoot4</li>
+			<li>WolfFur</li>
+		</allowedColors>
+	</ColorRegionDef>
+	
+	<ColorRegionDef Class="Milkwaters_ArkMod.ColorRegionDef">
+		<defName>Carchar_Belly</defName>
+		<allowedColors>
+			<li>LightGrey</li>
+			<li>DarkGrey</li>
+			<li>DinoDarkRed</li>
+			<li>DinoMediumBrown</li>
+			<li>DinoDarkBrown</li>
+			<li>DarkWolfFur</li>
+		</allowedColors>
+	</ColorRegionDef>
+	
+	<ColorRegionDef Class="Milkwaters_ArkMod.ColorRegionDef">
+		<defName>Carchar_Spikes</defName>
+		<allowedColors>
+			<li>LightGrey</li>
+			<li>DarkGrey</li>
+			<li>DinoDarkRed</li>
+			<li>DinoMediumBrown</li>
+			<li>DinoDarkBrown</li>
+			<li>DarkWolfFur</li>
+		</allowedColors>
+	</ColorRegionDef>
+	
+	<ColorRegionDef Class="Milkwaters_ArkMod.ColorRegionDef">
+		<defName>Carchar_Membrane</defName>
+		<allowedColors>
+			<li>LightGrey</li>
+			<li>DarkGrey</li>
+			<li>DinoDarkRed</li>
+			<li>DinoMediumBrown</li>
+			<li>DinoDarkBrown</li>
+			<li>DarkWolfFur</li>
+		</allowedColors>
+	</ColorRegionDef>
+
+
+  <GraphicDataColorRegionsDef Class="Milkwaters_ArkMod.GraphicDataColorRegionsDef">
+    <defName>m_CarcharodontosaurusGraphicTemplate</defName>
+	
+    <texPath>Things/Pawn/Dinosaur/m_Carcharodontosaurus/carchar</texPath>
+
+    <colorRegionTintData>
+        <North>
+          <masks>
+          </masks>
+        </North>
+
+        <East>
+          <masks>
+            <li>
+			  <regionId>Carchar_Body</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Carcharodontosaurus/Masks/carchar_body_east</maskTexPath>
+            </li>
+            <li>
+			  <regionId>Carchar_Belly</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Carcharodontosaurus/Masks/carchar_belly_east</maskTexPath>
+            </li>
+            <li>
+			  <regionId>Carchar_Spots</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Carcharodontosaurus/Masks/carchar_spots_east</maskTexPath>
+            </li>
+            <li>
+			  <regionId>Carchar_Membrane</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Carcharodontosaurus/Masks/carchar_membrane_east</maskTexPath>
+            </li>
+            <li>
+			  <regionId>Carchar_Spikes</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Carcharodontosaurus/Masks/carchar_spikes_east</maskTexPath>
+            </li>
+            <li>
+			  <regionId>Default_Outline</regionId>
+              <maskTexPath>Things/Pawn/Dinosaur/m_Carcharodontosaurus/Masks/carchar_outline_east</maskTexPath>
+            </li>
+          </masks>
+        </East>
+
+        <South>
+          <masks>
+          </masks>
+        </South>
+    </colorRegionTintData>
+
+  </GraphicDataColorRegionsDef>
+
+</Defs>
