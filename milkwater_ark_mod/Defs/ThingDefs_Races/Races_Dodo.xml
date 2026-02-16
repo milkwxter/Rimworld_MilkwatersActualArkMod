@@ -109,6 +109,10 @@
 			<texPath>Things/Pawn/Dinosaur/m_Dodo/dodo</texPath>
 			<drawSize>1.0</drawSize>
 			<template>m_DodoGraphicTemplate</template>
+			<shadowData>
+				<volume>(0.2, 0.1, 0.1)</volume>
+				<offset>(0,0,-0.2)</offset>
+			</shadowData>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>Things/Pawn/Dinosaur/m_Dodo/dodo_dessicated</texPath>
@@ -122,6 +126,10 @@
 			<texPath>Things/Pawn/Dinosaur/m_Dodo/dodo</texPath>
 			<drawSize>1.5</drawSize>
 			<template>m_DodoGraphicTemplate</template>
+			<shadowData>
+				<volume>(0.3, 0.2, 0.2)</volume>
+				<offset>(0,0,-0.2)</offset>
+			</shadowData>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>Things/Pawn/Dinosaur/m_Dodo/dodo_dessicated</texPath>
@@ -135,6 +143,10 @@
 			<texPath>Things/Pawn/Dinosaur/m_Dodo/dodo</texPath>
 			<drawSize>2.0</drawSize>
 			<template>m_DodoGraphicTemplate</template>
+			<shadowData>
+				<volume>(0.4, 0.3, 0.3)</volume>
+				<offset>(0,0,-0.2)</offset>
+			</shadowData>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>Things/Pawn/Dinosaur/m_Dodo/dodo_dessicated</texPath>

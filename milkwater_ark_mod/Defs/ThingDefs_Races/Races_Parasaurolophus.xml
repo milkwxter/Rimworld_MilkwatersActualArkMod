@@ -120,6 +120,10 @@
 			<texPath>Things/Pawn/Dinosaur/m_Parasaurolophus/parasaurolophus</texPath>
 			<drawSize>3.0</drawSize>
 			<template>m_ParasaurGraphicTemplate</template>
+			<shadowData>
+				<volume>(0.4, 0.3, 0.3)</volume>
+				<offset>(0,0,-0.2)</offset>
+			</shadowData>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>Things/Pawn/Dinosaur/m_Parasaurolophus/parasaurolophus_dessicated</texPath>
@@ -133,6 +137,10 @@
 			<texPath>Things/Pawn/Dinosaur/m_Parasaurolophus/parasaurolophus</texPath>
 			<drawSize>4.0</drawSize>
 			<template>m_ParasaurGraphicTemplate</template>
+			<shadowData>
+				<volume>(0.6, 0.45, 0.45)</volume>
+				<offset>(0,0,-0.2)</offset>
+			</shadowData>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>Things/Pawn/Dinosaur/m_Parasaurolophus/parasaurolophus_dessicated</texPath>
@@ -146,6 +154,10 @@
 			<texPath>Things/Pawn/Dinosaur/m_Parasaurolophus/parasaurolophus</texPath>
 			<drawSize>4.5</drawSize>
 			<template>m_ParasaurGraphicTemplate</template>
+			<shadowData>
+				<volume>(0.8, 0.6, 0.6)</volume>
+				<offset>(0,0,-0.2)</offset>
+			</shadowData>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>Things/Pawn/Dinosaur/m_Parasaurolophus/parasaurolophus_dessicated</texPath>

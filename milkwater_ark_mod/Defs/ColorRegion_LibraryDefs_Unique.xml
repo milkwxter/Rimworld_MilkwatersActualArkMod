@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+	<!-- Trike -->
+	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
+		<defName>TrikeHorns</defName>
+		<color>(0.760, 0.592, 0.231, 1)</color>
+	</ColorRegionTintColorDef>
+	
 	<!-- Purlovia -->
 	<ColorRegionTintColorDef Class="Milkwaters_ArkMod.ColorRegionTintColorDef">
 		<defName>PurloviaFangs</defName>
