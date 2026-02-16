@@ -23,6 +23,9 @@
       <ComfyTemperatureMin>-10</ComfyTemperatureMin>
       <FilthRate>6</FilthRate>
       <Wildness>0.0</Wildness>
+      <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.30</ArmorRating_Heat>
     </statBases>
 	
     <race>
@@ -41,6 +44,14 @@
 	  
       <manhunterOnTameFailChance>0.20</manhunterOnTameFailChance>
       <manhunterOnDamageChance>1.00</manhunterOnDamageChance>
+	  
+		<wildBiomes>
+			<BorealForest>0.25</BorealForest>
+			<Tundra>0.22</Tundra>
+			<ColdBog>0.18</ColdBog>
+			<IceSheet>0.06</IceSheet>
+			<TemperateForest>0.06</TemperateForest>
+		</wildBiomes>
 	  
       <packAnimal>true</packAnimal>
       <lifeStageAges>

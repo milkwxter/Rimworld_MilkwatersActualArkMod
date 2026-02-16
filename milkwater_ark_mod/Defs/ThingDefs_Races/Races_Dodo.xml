@@ -43,6 +43,13 @@
       <manhunterOnTameFailChance>0.00</manhunterOnTameFailChance>
       <manhunterOnDamageChance>0.00</manhunterOnDamageChance>
 	  
+		<wildBiomes>
+			<TropicalRainforest>0.20</TropicalRainforest>
+			<TropicalSwamp>0.15</TropicalSwamp>
+			<TemperateForest>0.15</TemperateForest>
+			<AridShrubland>0.03</AridShrubland>
+		</wildBiomes>
+	  
       <packAnimal>false</packAnimal>
       <lifeStageAges>
         <li>
