@@ -18,12 +18,30 @@ namespace Milkwaters_ArkMod
         // my shader that supports 7 masks and color slots
         private static readonly Shader ColorRegionShader = ShaderDatabase.LoadShader("ColorRegionTint");
 
+        private static readonly int[] MaskTexIDs = 
+            { Shader.PropertyToID("_MaskTex0"), Shader.PropertyToID("_MaskTex1"), Shader.PropertyToID("_MaskTex2"),
+              Shader.PropertyToID("_MaskTex3"), Shader.PropertyToID("_MaskTex4"), Shader.PropertyToID("_MaskTex5"),
+              Shader.PropertyToID("_MaskTex6") };
+        private static readonly int[] ColorIDs =
+            { Shader.PropertyToID("_Color0"), Shader.PropertyToID("_Color1"), Shader.PropertyToID("_Color2"),
+              Shader.PropertyToID("_Color3"), Shader.PropertyToID("_Color4"), Shader.PropertyToID("_Color5"),
+              Shader.PropertyToID("_Color6") };
+
+
         // the active tint data
         private ColorRegionTintData activeTintData;
 
         // per facing mask texture lists for that pawn
         private readonly List<Texture2D>[] maskTextures = new List<Texture2D>[4];
-        private readonly List<Color>[] maskColors = new List<Color>[4];
+
+        // cached mask sets per facing (0=north,1=east,2=south,3=west)
+        private readonly FacingMaskSet[] facingSets = new FacingMaskSet[4];
+
+        // cached region defs per facing per mask slot
+        private readonly List<ColorRegionDef>[] regionDefs = new List<ColorRegionDef>[4];
+
+        // cached allowed color defs per facing per mask slot
+        private readonly List<List<ColorRegionTintColorDef>>[] allowedColorDefs = new List<List<ColorRegionTintColorDef>>[4];
 
         // rotation helpers
         private bool eastFlipped;
@@ -43,7 +61,6 @@ namespace Milkwaters_ArkMod
         public override float DrawRotatedExtraAngleOffset => drawRotatedExtraAngleOffset;
 
         // determines if the sprite should rotate or stay static
-        // !TODO: clean this up?
         public override bool ShouldDrawRotated
         {
             get
@@ -94,6 +111,12 @@ namespace Milkwaters_ArkMod
                     Log.Message("[ColorRegionTint] Init EXIT (BAD MATS, no tint data).");
                     return;
                 }
+
+                // cache facing mask sets
+                facingSets[0] = activeTintData.North;
+                facingSets[1] = activeTintData.East;
+                facingSets[2] = activeTintData.South;
+                facingSets[3] = activeTintData.East;
 
                 // copy basic graphic settings
                 data = myData;
@@ -166,11 +189,12 @@ namespace Milkwaters_ArkMod
                 if (baseTex[1] == null) baseTex[1] = baseTex[3] ?? baseTex[0];
                 if (baseTex[3] == null) baseTex[3] = baseTex[1] ?? baseTex[0];
 
-                // initialize mask lists
+                // initialize per-facing caches
                 for (int i = 0; i < 4; i++)
                 {
                     maskTextures[i] = new List<Texture2D>();
-                    maskColors[i] = new List<Color>();
+                    regionDefs[i] = new List<ColorRegionDef>();
+                    allowedColorDefs[i] = new List<List<ColorRegionTintColorDef>>();
                 }
 
                 // build base materials for each facing using custom function
@@ -200,7 +224,7 @@ namespace Milkwaters_ArkMod
             }
 
             // create a material request similar to Graphic_Multi
-            MaterialRequest mr = default(MaterialRequest);
+            MaterialRequest mr = default;
             mr.mainTex = mainTex;
             mr.shader = ColorRegionShader;
             mr.color = color;
@@ -223,68 +247,85 @@ namespace Milkwaters_ArkMod
             if (activeTintData == null)
                 return;
 
-            FacingMaskSet facingSet = GetFacingMaskSet(rot);
+            FacingMaskSet facingSet = facingSets[rot.AsInt];
             if (facingSet == null || facingSet.masks == null || facingSet.masks.Count == 0)
                 return;
 
             List<Texture2D> texList = maskTextures[index];
             texList.Clear();
-            maskColors[index].Clear();
+            regionDefs[index].Clear();
+            allowedColorDefs[index].Clear();
 
-            // load mask textures for this facing
+            // load mask textures and preload region/color defs for this facing
             foreach (MaskEntry entry in facingSet.masks)
             {
                 if (entry == null)
                     continue;
 
+                // mask texture
                 Texture2D maskTex = ContentFinder<Texture2D>.Get(entry.maskTexPath, reportFailure: false);
                 if (maskTex == null)
                 {
                     Log.Warning($"Graphic_ColorRegionTint: Could not find mask texture at '{entry.maskTexPath}'");
                     continue;
                 }
-
                 texList.Add(maskTex);
+
+                // region def
+                if (entry.regionId.NullOrEmpty())
+                {
+                    Log.Warning($"[ColorRegionTint] MaskEntry missing regionId for mask '{entry.maskTexPath}'");
+                    regionDefs[index].Add(null);
+                    allowedColorDefs[index].Add(null);
+                    continue;
+                }
+
+                ColorRegionDef regionDef = DefDatabase<ColorRegionDef>.GetNamed(entry.regionId, false);
+                if (regionDef == null)
+                {
+                    Log.Error($"[ColorRegionTint] No ColorRegionDef found for regionId '{entry.regionId}'");
+                    regionDefs[index].Add(null);
+                    allowedColorDefs[index].Add(null);
+                    continue;
+                }
+
+                if (regionDef.allowedColors == null || regionDef.allowedColors.Count == 0)
+                {
+                    Log.Error($"[ColorRegionTint] ColorRegionDef '{entry.regionId}' has no allowedColors");
+                    regionDefs[index].Add(regionDef);
+                    allowedColorDefs[index].Add(null);
+                    continue;
+                }
+
+                regionDefs[index].Add(regionDef);
+
+                // preload allowed color defs for this region
+                List<ColorRegionTintColorDef> colorList = new List<ColorRegionTintColorDef>();
+                foreach (string name in regionDef.allowedColors)
+                {
+                    ColorRegionTintColorDef colorDef = DefDatabase<ColorRegionTintColorDef>.GetNamedSilentFail(name);
+                    if (colorDef == null)
+                    {
+                        Log.Error($"[ColorRegionTint] Missing ColorRegionTintColorDef '{name}' for region '{entry.regionId}'");
+                        continue;
+                    }
+                    colorList.Add(colorDef);
+                }
+                allowedColorDefs[index].Add(colorList);
             }
 
             // assign mask textures to shader slots
             for (int i = 0; i < texList.Count; i++)
             {
-                mat.SetTexture("_MaskTex" + i, texList[i]);
+                mat.SetTexture(MaskTexIDs[i], texList[i]);
             }
-        }
-
-        // returns the mask set for a given rotation
-        private FacingMaskSet GetFacingMaskSet(Rot4 rot)
-        {
-            if (activeTintData == null)
-                return null;
-
-            if (rot == Rot4.North)
-                return activeTintData.North;
-            if (rot == Rot4.East)
-                return activeTintData.East;
-            if (rot == Rot4.South)
-                return activeTintData.South;
-
-            // west uses east masks unless explicitly defined
-            return activeTintData.East;
         }
 
         // returns a material for a specific pawn + rotation WITH colors
         public override Material MatAt(Rot4 rot, Thing thing = null)
         {
             int index = rot.AsInt;
-            Material baseMat;
-
-            if (rot == Rot4.North)
-                baseMat = mats[0];
-            else if (rot == Rot4.East)
-                baseMat = mats[1];
-            else if (rot == Rot4.South)
-                baseMat = mats[2];
-            else
-                baseMat = mats[3];
+            Material baseMat = mats[index];
 
             // if no pawn, return shared material
             if (thing == null)
@@ -295,7 +336,7 @@ namespace Milkwaters_ArkMod
             if (comp == null)
                 return baseMat;
 
-            // use the facing index (0–3) as the cache key
+            // use the facing index (0-3) as the cache key
             int key = rot.AsInt;
 
             // check if we've already built a material for this pawn + facing
@@ -321,7 +362,8 @@ namespace Milkwaters_ArkMod
             if (activeTintData == null || thing == null)
                 return;
 
-            FacingMaskSet facingSet = GetFacingMaskSet(rot);
+            int index = rot.AsInt;
+            FacingMaskSet facingSet = facingSets[index];
             if (facingSet == null || facingSet.masks == null || facingSet.masks.Count == 0)
                 return;
 
@@ -330,41 +372,41 @@ namespace Milkwaters_ArkMod
             if (comp == null)
                 return;
 
+            List<ColorRegionDef> regionList = regionDefs[index];
+            List<List<ColorRegionTintColorDef>> colorLists = allowedColorDefs[index];
+            if (regionList == null || colorLists == null)
+                return;
+
             int colorSlot = 0;
 
-            foreach (MaskEntry entry in facingSet.masks)
+            for (int i = 0; i < facingSet.masks.Count; i++)
             {
+                MaskEntry entry = facingSet.masks[i];
                 if (entry == null || entry.regionId.NullOrEmpty())
                 {
                     Log.Warning($"[ColorRegionTint] MaskEntry missing regionId for mask '{entry?.maskTexPath}'");
                     continue;
                 }
 
-                // load region definition
-                ColorRegionDef regionDef = DefDatabase<ColorRegionDef>.GetNamed(entry.regionId, false);
+                ColorRegionDef regionDef = (i < regionList.Count) ? regionList[i] : null;
                 if (regionDef == null)
-                {
-                    Log.Error($"[ColorRegionTint] No ColorRegionDef found for regionId '{entry.regionId}'");
                     continue;
-                }
 
-                if (regionDef.allowedColors == null || regionDef.allowedColors.Count == 0)
-                {
-                    Log.Error($"[ColorRegionTint] ColorRegionDef '{entry.regionId}' has no allowedColors");
+                List<ColorRegionTintColorDef> colorList = (i < colorLists.Count) ? colorLists[i] : null;
+                if (colorList == null || colorList.Count == 0)
                     continue;
-                }
 
                 // reuse or generate color for this pawn + region
                 if (!comp.regionColors.TryGetValue(entry.regionId, out Color chosenColor))
                 {
-                    Rand.PushState(thing.thingIDNumber ^ entry.regionId.GetHashCode());
-                    string chosenName = regionDef.allowedColors.RandomElement();
-                    Rand.PopState();
+                    // deterministic index based on pawn + region
+                    int seed = Gen.HashCombine(thing.thingIDNumber, entry.regionId);
+                    int idx = Mathf.Abs(seed) % colorList.Count;
 
-                    ColorRegionTintColorDef colorDef = DefDatabase<ColorRegionTintColorDef>.GetNamedSilentFail(chosenName);
+                    ColorRegionTintColorDef colorDef = colorList[idx];
                     if (colorDef == null)
                     {
-                        Log.Error($"[ColorRegionTint] Missing ColorRegionTintColorDef '{chosenName}'");
+                        Log.Error($"[ColorRegionTint] Null ColorRegionTintColorDef in cached list for region '{entry.regionId}'");
                         chosenColor = Color.white;
                     }
                     else
@@ -376,7 +418,10 @@ namespace Milkwaters_ArkMod
                 }
 
                 // assign color to shader slot
-                mat.SetColor("_Color" + colorSlot, chosenColor);
+                if (colorSlot < ColorIDs.Length)
+                {
+                    mat.SetColor(ColorIDs[colorSlot], chosenColor);
+                }
                 colorSlot++;
             }
         }
@@ -393,11 +438,7 @@ namespace Milkwaters_ArkMod
 
         public override int GetHashCode()
         {
-            return Gen.HashCombineStruct(
-                Gen.HashCombineStruct(
-                    Gen.HashCombine(0, path),
-                    color),
-                colorTwo);
+            return Gen.HashCombineStruct(Gen.HashCombineStruct(Gen.HashCombine(0, path), color), colorTwo);
         }
 
         // assigns badmat to all facings if initialization fails
